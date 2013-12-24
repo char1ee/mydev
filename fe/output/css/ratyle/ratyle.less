@@ -1,0 +1,17 @@
+// @代码风格:四个空格缩进，不可使用tab，不可使用大写字母
+//          不可以使用id作用于样式，id全部留给js使用，js中如需要使用class操作多个节点，js使用的样式以j-开头，
+//          样式顺序遵循 先布局后自我样式顺序,
+//          e.g (margin position left...)—>(padding...)—>(border...)—>(width height...)—>(background...)...,
+//          css3各浏览器前缀竖写，遵循CFOS (C:chrome/safari)(F:firefox)(O:opera)(S:microsoft ie)顺序.
+//          zindex管理：
+//          局部浮动元素：10-20
+//          整体浮动元素：20-30
+//          全局弹出框  ：30-40
+// @命名规范：全站通用的样式都以f-命名开头，取fucntion之义，
+//           不可重复使用以防止污染其它样式的css，以i-开头 ，取id之义
+//           每个模板页面的body处需加一个n-开头的命名的class，如n-index，取namespace之义，本页独有样式都需要以其为祖先来继承.
+
+@import 'config.less';
+@import 'function.less';
+@import 'reset.less';
+@import 'util.less';

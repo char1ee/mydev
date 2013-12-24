@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a{
+            display: inline-block;
+            width:100px;
+            height: 100px;
+            border:1px solid #333;
+        }
+        a:hover{
+            border: 1px solid #f00;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" data-src="demo.mp3">1</a>
+    <a href="#" data-src="demo2.mp3">2</a>
+    <script src="../../../js/vendor/jquery/jquery.js"></script>
+    <script src="../../../js/vendor/seajs/sea.js"></script>
+
+    <script>
+        seajs.use(['./mp3player.js'], function (MP3Player) {
+            var player = new MP3Player();
+            $('a').hover(
+                function(){
+                    player.play($(this).data('src'));
+                },
+                function(){
+                    player.stop();
+                }
+            )
+        })
+    </script>
+
+   <!--
+    <script src="mp3player.js"></script>
+    <script>
+        jQuery(function ($) {
+            var player = new MP3Player();
+            $('a').hover(
+                function(){
+                    player.play($(this).data('src'));
+                },
+                function(){
+                    player.stop();
+                }
+            )
+        });
+    </script>
+
+    <script src="../../../js/vendor/requirejs/require.js"></script>
+    <script src="../../../js/vendor/requirejs/require.config.js"></script>
+    <script>
+        require(['./mp3player'], function(MP3Player) {
+            var player = new MP3Player();
+            $('a').hover(
+                function(){
+                    player.play($(this).data('src'));
+                },
+                function(){
+                    player.stop();
+                }
+            )
+        })
+    </script>
+-->
+</body>
+</html>

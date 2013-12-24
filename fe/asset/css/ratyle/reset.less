@@ -1,0 +1,79 @@
+.f-reset(){
+    //  @名称: reset.less
+    //  @功能: 初始化各html标签，使其在所有浏览器下保持一致
+
+    // 配置文件定义在config.less里
+
+    // 防止用户自定义背景颜色对网页的影响
+    html{
+        color:@baseColor;
+        background:#fff;
+        font-size: 100%;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: none;
+        .f-wordBreak();
+    }
+
+    // 内外边距通常让各个浏览器样式的表现位置不同
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+        margin:0;padding:0;
+    }
+    // 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG)
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+    // HTML5 媒体文件跟 img 保持一致
+    audio,canvas,video {display: inline-block;*display: inline;*zoom:1;}
+    audio:not([controls]) {display: none;}
+    // 要注意表单元素并不继承父级 font 的问题
+    body,button,input,select,textarea{font:@baseFontSize~"/@{baseLineHeight}" @baseFontFamily;}
+    input,select,textarea{font-size:100%;background:#fff;}
+    // 去掉各Table  cell 的边距并让其边重合，防止表格内文字不能换行
+    table{border-collapse:collapse;border-spacing:0;table-layout:fixed;word-wrap:break-word;word-break:break-all;width:100%;vertical-align:top}
+    th,td{vertical-align: top}
+
+    // IE bug fixed: th 不继承 text-align
+    th{text-align:inherit;}
+    // 去除默认边框
+    fieldset,img{border:none;}
+    // ie6 7 8(q) bug 显示为行内表现
+    iframe{display:block;}
+    // 去掉 firefox 下此元素的边框
+    abbr,acronym{border:none;font-variant:normal;}
+    // 一致的 del 样式
+    del {text-decoration:line-through;}
+    address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
+    // 去掉列表前的标识, li 会继承(在ie7下有时会不继承)
+    ol,ul,li {list-style:none;}
+    // 对齐是排版最重要的因素, 别让什么都居中
+    caption,th {text-align:left;}
+    // 让标题都自定义, 适应多个系统应用
+    h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:700;}
+    q:before,q:after {content:'';}
+    // 统一上标和下标
+    sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
+    sup {top: -0.5em;}
+    sub {bottom: -0.25em;}
+
+    // 默认不显示下划线，保持页面简洁
+    ins,a { text-decoration:none;}
+    a{color:@linkColor;}
+    a:focus {outline: thin dotted #333;outline: 5px auto -webkit-focus-ring-color;outline-offset: -2px;}
+    a:hover,a:active {outline: 0;text-decoration:underline;}
+    a:hover{color:@linkColorHover;}
+    // //文本框美化 增加高级浏览器呼吸效果（textarea同样适用)
+    // .text,textarea{ border:1px solid #ccc;vertical-align:top;color:#333}
+    // .text{height:25px;padding-left:6px;line-height:~"25px\9"}
+    // textarea{padding:4px 0 7px 6px;overflow:auto}
+    // .text:hover,textarea:hover{border-color:#999}
+    // .text:focus, textarea:focus {border-color:#d1ba8a;.f-transition("border linear .2s,-moz-box-shadow linear .5s");.f-boxShadow("0 0 3px rgba(209,187,138,.3)");}
+    // .text.grey,textarea.grey{color:#ccc !important}
+    //  //文本框readonly样式
+    //  .text.readonly, textarea.readonly{border-color:#ccc;background:#F1F1F1;color:#ccc;cursor:default;resize:none;.f-boxShadow("0 0 0");}
+
+    //  //按钮
+    //  button,.btn{border:none;cursor: pointer;}
+    // ::selection {
+    //     text-shadow:none;
+    //     background: @blue;
+    //     color:@white;
+    // }
+}

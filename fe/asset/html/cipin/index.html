@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function readLetter (txt) {
+            // 读字符串
+            // var
+            // var letter = [];
+
+            var cutNum = [5, 5, 5];
+
+            // for (var step = 0; step < 3; step++) {
+            //     for (var j = 0; j < txtLen - step; j++) {
+            //        (letter[step] || (letter[step] = [])).push(txt.substr(j, step + 1));
+            //     }
+            // }
+            // console.log(letter);
+            // return letter;
+        }
+
+        function cutWords(txt, step) {
+            // 按步长分词, 如"床前明白光"拆成['床前'，'前明'，'明月', '月光']
+            if (step < 1) return;
+            var txtLen = txt.length;
+            var ret = [];
+            for (var i = 0, l = txtLen - step + 1; i < l; ++i) {
+                ret.push(txt.substr(i, step));
+            }
+            return ret;
+        }
+
+        function hashWords(arr) {
+            // 遍历数组，生成 {'张三'：15,'李四'：10}格式对象
+            var ret = {};
+            for (var i = 0, l = arr.length; i < l; ++i) {
+                if (ret[arr[i]]) {
+                    ++ret[arr[i]];
+                } else {
+                    ret[arr[i]] = 1;
+                }
+            }
+            return ret;
+        }
+
+        function sortObj(obj) {
+            // 将形如的{'张三'：15,'李四'：10}对象进行排序，生成[{name:'张三', time:50},...] 格式
+            var ret = [];
+            var prev;
+            for (var i in obj) {
+                if (!obj[prev]){obj[prev] = 0}
+                if(obj[i] >= obj[prev]){
+                    ret.push(i);
+                } else {
+                    // ret.push();
+                }
+
+                prev = i;
+            }
+            return ret;
+        }
+        console.log(
+            sortObj({
+                '张三': 15,
+                '李四': 10,
+                '胡五': 17
+
+            })
+        );
+        // 统计数组里出现最多的n个元素和次数
+        function countArray (arr, n) {
+            // return  [
+            //     ['张三': 100],
+            //     ['李四': 50]
+            // ]
+
+            // ['a', 'b', 'a', 'b']
+            var o = {},
+                a = [];
+
+            var i = 0;
+            arr.forEach(function (item, i) {
+                var _a;
+                if (!o[item]) {
+                    _a = [];
+                    _a[0] = item;
+                    _a[1] = 1;
+                    a.push(_a);
+                    // a.push(i);
+                    // i=0;
+                    o[item] = item;
+                } else {
+                    // console.log(a);
+                    // a[i][1] = a[i][1]+1
+                    // _a[1] = (_a[1] || 0 )+ 1;
+                }
+            })
+
+            // var _arr = arr.sort();
+            // var ret = [];
+            // for (var i = 0; i < _arr.length; ++i) {
+            //     if()
+            // }
+            // var o = {};
+            // var ret = [];
+            // var i,
+            //     j,
+            //     item,
+            //     len = arr.length;
+            // for (i = 0; i < len; ++i ){
+            //     for (j = i + 1; j < len; ++j) {
+            //         if (arr[i] === arr[j]) {
+            //             i = ++j;
+            //         } else {
+            //             item = item || [];
+            //             item[0] = arr[i];
+            //             ret.push(item);
+            //             item.length = 0;
+            //         }
+            //     }
+            // }
+            // console.log(JSON.stringify(a));
+            // return ret;
+        }
+
+        // countArray(['a', 'b', 'a', 'b', 'a','c', 'a', 'a', 'b', 'd'])
+    </script>
+</body>
+</html>

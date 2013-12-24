@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="n-home">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <title>360教育搜索_最安全便捷的学习与课程查询平台</title>
+    {qcms_style id="3700292694"}
+    <meta name="keywords" content="学习,教育,教育在线,教学,培训,课程搜索,教育直达,教育网站导航,初一,初二,初三,高一,高二,高三,高考,考研,语文,数学,英语,物理,化学,四六级,自考,成人高考,留学,注册会计师,报关员,公务员,建筑师,GRE,雅思,托福,辅导">
+    <meta name="description" content="360教育搜索_为您提供互联网教育名站查询和导航，提供少儿教育、中等教育、高等教育、职业技能不同层次的教育课程一键直达，为您打造互联网最简单、最便捷的课程查询、学科筛选、比价、在线报名等在内的一站式服务">
+</head>
+<body>
+    <header>
+        <div class="u-centerwrap wrap1">
+            <h1 class="i-logo"><a href="#">首页</a></h1>
+            <form class="i-search" action="http://so.360.cn/s" target="_blank">
+                <input class="u-text" type="text" name="q">
+                <label class="btn-wrap">
+                    <button class="btn" type="submit">搜索一下</button>
+                </label>
+            </form>
+        </div>
+        <div class="i-nav">
+            <div class="u-centerwrap">
+                <ul>
+                    <li class="cur"><a href="#">首页</a></li>
+                    <li><a href="/yingyu/">英语</a></li>
+                    <li><a href="/site/kaoshi/">考试</a></li>
+                    <li><a href="/liuxue/">留学</a></li>
+                    <li><a href="/zhijiao/">职教</a></li>
+                    <li><a href="/site/wendang/">文库</a></li>
+                    <li><a href="/site/zhishi/">知识</a></li>
+                    <li><a href="/site/jiaoyu/">教育</a></li>
+                    <li><a href="http://class.edu.360.cn/">在线学习</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="wrap2">
+        <div class="u-centerwrap u-oa">
+            <div class="wrap3">
+                <!-- slide -->
+                {qcms_block id="3700293867"}
+                <!-- /slide -->
+                <!-- 最上面图片展示区域 -->
+                {qcms_block id="1100493385"}
+                <!-- /最上面图片展示区域 -->
+            </div>
+        </div>
+    </div>
+    {qcms_block id="3700293898"}
+    <!-- 合作伙伴 -->
+    {qcms_block id="1100493326"}
+    <!-- /合作伙伴 -->
+
+    <footer>
+        <div class="i-footer">
+            <a href="http://hao.360.cn/about.html" target="_blank">关于我们</a>&nbsp; &nbsp;|&nbsp;&nbsp; <a href="http://feedback.hao.360.cn/" target="_blank">意见反馈</a>&nbsp;&nbsp; Copyright ©360网址导航. &nbsp;&nbsp; All Rights Reserved.&nbsp;&nbsp; <a target="_blank" href="http://www.miibeian.gov.cn" class="icp">京ICP证080047号</a>
+        </div>
+    </footer>
+</body>
+
+</html>

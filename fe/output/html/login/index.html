@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="gbk">
+    <title></title>
+    <link rel="stylesheet" href="http://s1.qhimg.com/i360/;css;index_pop/v3202.css" />&nbsp;
+    <script type="text/javascript" src="http://i.360.cn/script/jquery/jquery-1.7.1.min.js?v1329272007"></script>
+    <script src="http://s5.qhimg.com/i360/;js;pass_api_/seed,md5,reg/v3202.js"></script>
+</head>
+
+<body>
+    <div class="i-reg-wrap">
+        <div id="unameWrap" style="width:430px;"></div>
+        <span class="dologin">已有360帐号，请点此<a href="https://openapi.360.cn/oauth2/authorize?client_id=8819d1babbbc50a42021ee957c4b6e63&amp;response_type=code&amp;redirect_uri=http%3A%2F%2Faccount.weibo.com%2Fset%2Fbindsns%2Fcallback&amp;state=360&amp;scope=basic&amp;display=default">登录</a></span>
+    </div>
+
+    <script type="text/javascript">
+    (function() {
+        var regCallback = function() {
+            // 业务方的逻辑&nbsp;
+            alert('注册成功！');
+        };
+        QHPass.resConfig.src = "xxx";
+        QHPass.showReg(regCallback, {
+            wrap: 'unameWrap',
+            type: 'normal'
+        });
+    })();
+    </script>
+</body>
+
+</html>

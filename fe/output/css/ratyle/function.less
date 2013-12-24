@@ -1,0 +1,329 @@
+// @名称： function.less
+// @作者： 耗子
+// @功能： 用于解决浏览器各种兼容问题
+.f-fl(){
+    float: left;
+    _display:inline;
+}
+.f-fr(){
+    float:right;
+    _display:inline;
+}
+
+//块状元素inline-block(内联元素ie67原生支持inline-block)
+.f-inlineBlock(){
+    display: inline-block;
+   *display: inline;
+   *zoom:1;
+}
+
+// 清除inline-block元素代码换行造成的空隙
+.f-ib() {font-size:0;
+    & * {font-size:12px;}
+}
+//单行文字超出省略号
+.f-textOverflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+// 超长英文自动换行
+.f-wordBreak(){
+    word-wrap:break-word;word-break:break-all;
+}
+// 常用描边
+.f-border(@color, @width:1px, @type:solid){
+        border:@width @type @color;
+}
+
+//定义矩形
+.f-size(@width,@height){
+        width:@width;
+        height:@height;
+}
+//定义正方形
+.f-square(@width){
+        .f-size(@width,@width)
+}
+//居中容器
+.f-centerBox(@width:@maxWidth){
+    display: block;
+    width: @width;
+    margin: 0 auto;
+}
+
+//fuck ie6
+.f-minWidth(@width){
+        min-width:@width;
+             _width : ~"expression((documentElement.clientWidth<@{width})?'@{width}':'auto')";
+}
+//min height 只有min-height性能消耗小，你们懂的
+.f-minHeight(@height){
+        min-height:@height;
+           _height:@height;
+}
+//max width
+.f-maxWidth(@width){
+        max-width : @width;
+           _width : ~"expression((documentElement.clientWidth>@{width})?'@{width}':'auto')";
+
+}
+//max height
+.f-maxHeight(@height){
+         max-height : @height;
+            _height : ~"expression((documentElement.clientHeight>@{height})?'@{height}':'auto')";
+}
+//fixed 顶部静止 必须为body设置_background:url(about:blank);或图片
+.f-fixed(){
+        position: fixed;
+     _position:absolute;
+}
+//顶部静止
+.f-fixedTop(@top : 0){
+        position: fixed;
+       _position: absolute;
+        top:@top;
+       _top:~"expression(eval(document.documentElement.scrollTop + @{top}))";
+}
+//底部静止  性能比顶部静止更差 ╮(╯▽╰)╭
+.f-fixedBottom(@bottom : 0){
+        position: fixed;
+     _position:absolute;
+        bottom:@bottom;
+     _top:~"expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)) - @{bottom})";
+}
+
+// css3属性处理
+
+// opacity 透明处理
+.f-opacity(@opacity: 1) {
+    @_opacity :@opacity*100;
+    filter: ~"alpha(opacity=@{_opacity})";
+    opacity: @opacity;
+}
+
+// @demo： .f-backgroundOpacity(255,255,255,0.8)
+//      cc = Math.floor(0.8 * 255).toString(16)
+.f-backgroundOpacity(@red, @green, @blue, @alpha:1){
+        @filtercolor:`(_f = function(d){ var v = (parseInt(d)|0).toString(16);return v.length<2 ? "0"+v : v;},'#'+_f(@{alpha}*255) + _f(@{red}) + _f(@{green})+ _f(@{blue}))`;
+        background-color: ~'rgba(@{red},@{green},@{blue},@{alpha})';
+        -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}')";
+        filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{filtercolor}',endColorstr='@{filtercolor}')";
+}
+
+//border-radius 圆角
+.f-borderRadius(@radius: "5px") {
+    border-radius: ~"@{radius}";
+}
+
+// box-shadow
+.f-boxShadow(@shadow: "0 1px 3px rgba(0,0,0,.25)") {
+        -webkit-box-shadow: ~"@{shadow}";
+             -moz-box-shadow: ~"@{shadow}";
+                        box-shadow: ~"@{shadow}";
+}
+
+// transitions
+.f-transition(@transition) {
+        -webkit-transition: ~"@{transition}";
+             -moz-transition: ~"@{transition}";
+                -ms-transition: ~"@{transition}";
+                 -o-transition: ~"@{transition}";
+                        transition: ~"@{transition}";
+}
+
+// transformations
+.f-rotate(@degrees) {
+        -webkit-transform: rotate(@degrees);
+             -moz-transform: rotate(@degrees);
+                -ms-transform: rotate(@degrees);
+                 -o-transform: rotate(@degrees);
+                        transform: rotate(@degrees);
+                             filter: ~'progid:DXImageTransform.Microsoft.BasicImage(rotation=3)';
+
+}
+.f-scale(@ratio) {
+        -webkit-transform: scale(@ratio);
+             -moz-transform: scale(@ratio);
+                -ms-transform: scale(@ratio);
+                 -o-transform: scale(@ratio);
+                        transform: scale(@ratio);
+}
+.f-translate(@x: 0, @y: 0) {
+        -webkit-transform: translate(@x, @y);
+             -moz-transform: translate(@x, @y);
+                -ms-transform: translate(@x, @y);
+                 -o-transform: translate(@x, @y);
+                        transform: translate(@x, @y);
+}
+.f-skew(@x: 0, @y: 0) {
+        -webkit-transform: skew(@x, @y);
+             -moz-transform: skew(@x, @y);
+                -ms-transform: skew(@x, @y);
+                 -o-transform: skew(@x, @y);
+                        transform: skew(@x, @y);
+}
+.f-translate3d(@x: 0, @y: 0, @z: 0) {
+        -webkit-transform: translate(@x, @y, @z);
+             -moz-transform: translate(@x, @y, @z);
+                -ms-transform: translate(@x, @y, @z);
+                 -o-transform: translate(@x, @y, @z);
+                        transform: translate(@x, @y, @z);
+}
+
+// background clip
+.f-backgroundClip(@clip) {
+        -webkit-background-clip: @clip;
+             -moz-background-clip: @clip;
+                        background-clip: @clip;
+}
+
+// background size
+.f-backgroundSize(@size){
+        -webkit-background-size: @size;
+             -moz-background-size: @size;
+                 -o-background-size: @size;
+                        background-size: @size;
+}
+
+
+// box sizing
+.f-boxSizing(@boxmodel) {
+        -webkit-box-sizing: @boxmodel;
+             -moz-box-sizing: @boxmodel;
+                -ms-box-sizing: @boxmodel;
+                        box-sizing: @boxmodel;
+}
+
+// user select
+.f-userSelect(@select) {
+        -webkit-user-select: @select;
+             -moz-user-select: @select;
+                 -o-user-select: @select;
+                        user-select: @select;
+}
+
+// resize anything
+.f-resizable(@direction: both) {
+        resize: @direction; // Options: horizontal, vertical, both
+        overflow: auto;
+}
+
+// content Columns
+.f-contentColumns(@columnCount, @columnGap: @gridColumnGutter) {
+        -webkit-column-count: @columnCount;
+             -moz-column-count: @columnCount;
+                        column-count: @columnCount;
+            -webkit-column-gap: @columnGap;
+                 -moz-column-gap: @columnGap;
+                            column-gap: @columnGap;
+}
+
+// Gradients 渐变
+#gradient {
+    .horizontal(@startColor: #555, @endColor: #333) {
+        background-color: @endColor;
+        background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+        background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+        background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+        background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+        background-image: linear-gradient(to right, @startColor, @endColor); // Standard, IE10
+        background-repeat: repeat-x;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down
+    }
+    .vertical(@startColor: #555, @endColor: #333) {
+        background-color: mix(@startColor, @endColor, 60%);
+        // background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+        background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+        // background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+        background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+        background-repeat: repeat-x;
+        // filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
+    }
+    .directional(@startColor: #555, @endColor: #333, @deg: 45deg) {
+        background-color: @endColor;
+        background-repeat: repeat-x;
+        background-image: -moz-linear-gradient(@deg, @startColor, @endColor); // FF 3.6+
+        background-image: -webkit-linear-gradient(@deg, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+        background-image: -o-linear-gradient(@deg, @startColor, @endColor); // Opera 11.10
+        background-image: linear-gradient(@deg, @startColor, @endColor); // Standard, IE10
+    }
+    .horizontal-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+        background-color: mix(@midColor, @endColor, 80%);
+        background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+        background-image: -webkit-linear-gradient(left, @startColor, @midColor @colorStop, @endColor);
+        background-image: -moz-linear-gradient(left, @startColor, @midColor @colorStop, @endColor);
+        background-image: -o-linear-gradient(left, @startColor, @midColor @colorStop, @endColor);
+        background-image: linear-gradient(to right, @startColor, @midColor @colorStop, @endColor);
+        background-repeat: no-repeat;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down, gets no color-stop at all for proper fallback
+    }
+
+    .vertical-three-colors(@startColor: #00b3ee, @midColor: #7a43b6, @colorStop: 50%, @endColor: #c3325f) {
+        background-color: mix(@midColor, @endColor, 80%);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), color-stop(@colorStop, @midColor), to(@endColor));
+        background-image: -webkit-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+        background-image: -moz-linear-gradient(top, @startColor, @midColor @colorStop, @endColor);
+        background-image: -o-linear-gradient(@startColor, @midColor @colorStop, @endColor);
+        background-image: linear-gradient(@startColor, @midColor @colorStop, @endColor);
+        background-repeat: no-repeat;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down, gets no color-stop at all for proper fallback
+    }
+    .radial(@innerColor: #555, @outerColor: #333) {
+        background-color: @outerColor;
+        background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@innerColor), to(@outerColor));
+        background-image: -webkit-radial-gradient(circle, @innerColor, @outerColor);
+        background-image: -moz-radial-gradient(circle, @innerColor, @outerColor);
+        background-image: -o-radial-gradient(circle, @innerColor, @outerColor);
+        background-repeat: no-repeat;
+    }
+    .striped(@color: #555, @angle: 45deg) {
+        background-color: @color;
+        background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
+        background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+        background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+        background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+        background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+    }
+}
+// Reset filters for IE
+.reset-filter() {
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+.f-textShadow(@color: #fff){
+    text-shadow:1px 1px @color;
+}
+
+//flex
+#flex {
+    .f-init(){
+        display: -webkit-box;      // OLD - iOS 6-, Safari 3.1-6
+        display: -moz-box;         // OLD - Firefox 19- (buggy but mostly works)
+        display: -ms-flexbox;      // TWEENER - IE 10
+        display: -webkit-flex;     // NEW - Chrome
+        display: flex;             // NEW, Spec - Opera 12.1, Firefox 20+
+    }
+    .f-flex(@per:1){
+        -webkit-box-flex: @per;        // OLD - iOS 6-, Safari 3.1-6
+           -moz-box-flex: @per;        // OLD - Firefox 19-
+            -webkit-flex: @per;        // Chrome
+                -ms-flex: @per;        // IE 10
+                    flex: @per;        // NEW, Spec - Opera 12.1, Firefox 20+
+    }
+    .f-order(@order:1){
+        -webkit-box-ordinal-group: @order;
+           -moz-box-ordinal-group: @order;
+                   -ms-flex-order: @order;
+                    -webkit-order: @order;
+                            order: @order;
+    }
+}
+
+
+
+//debug
+.f-debug(@color:#f00){
+    .f-border(@color);
+}

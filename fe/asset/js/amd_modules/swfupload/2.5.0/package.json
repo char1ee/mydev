@@ -1,0 +1,14 @@
+{
+
+	"name": "SWFUpload",
+	"version": "2.5.0",
+    "keywords" : ["util"],
+	"repository": {
+		"url": "",
+		"type": "git"
+	},
+	"homepage": "https://code.google.com/p/swfupload/",
+	"maintainers": ["李智杰 <lizhijie@360.cn>"],
+	"description": "Flash 上传组件，提供完整的 JS 调用接口。",
+	"output": "swfupload.js"
+}

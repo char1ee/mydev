@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button data-src="demo.mp3">play1</button>
+    <button data-src="demo2.mp3">play2</button>
+
+
+    <script src="mp3player.js"></script>
+    <script>
+        // init
+        var player = new MP3Player();
+        function play(e) {
+            var src,
+                node = e.target;
+            if(node.nodeName === 'BUTTON') {
+                src = node.getAttribute('data-src');
+                player.play(src);
+            }
+        }
+
+        if (document.addEventListener) {
+            document.addEventListener('click', play, false);
+        } else {
+            document.attachEvent('onclick', function () {
+                var e = window.event;
+                e.target = e.srcElement;
+                play.call(this, e);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+.i-reg * {
+    margin:0;
+    padding:0
+}
+.i-reg a {
+    color:#0d6cbb;
+    text-decoration:none
+}
+.i-reg a:hover {
+    text-decoration:underline
+}
+.i-reg {
+    background:#6aad20 url(http://w.qhimg.com/images/v2/i360/reg_openapp/html_bg.png) 0 0 repeat-x;
+    font-size:12px
+}
+.i-reg body {
+    background:url(http://w.qhimg.com/images/v2/i360/reg_openapp/body_bg.png) center 0 no-repeat;
+    color:#666;
+    line-height:25px
+}
+.i-reg-wrap {
+    width:445px;
+    height:460px;
+    overflow:hidden;
+    margin:0 auto;
+    border:5px solid #4f8218;
+    background:url(http://w.qhimg.com/images/v2/i360/reg_openapp/regbg.png) no-repeat #fff;
+    position:relative
+}
+.i-reg-wrap dd{
+    height: 53px;
+}
+.i-reg .mod-qiuser-pop {
+    margin-top:80px
+}
+.mod-qiuser-pop label {
+    float:left;
+    width:98px;
+    height:26px;
+    line-height:28px;
+    font-size:14px;
+    text-align:right;
+    margin-right:10px
+}
+.i-reg .ipt, .i-reg .ipt1 {
+    background-position:0 -226px;
+    border:1px solid #ccc;
+    height:26px;
+    line-height:26px\9;
+    width:244px;
+    text-indent:5px
+}
+.i-reg .ipt1 {
+    font-size: 26px;
+    width:98px;
+    height: 48px;
+    line-height: 48px\9;
+    vertical-align:bottom;
+}
+.i-reg .reg-wrap dd {
+    margin-bottom:10px
+}
+.i-reg .yz img {
+    width:140px;
+    height:50px;
+    vertical-align:bottom;
+    margin-left:5px;
+    margin-right:5px
+}
+.i-reg .text-tips {
+    padding-left:108px;
+    font-size:12px
+}
+.i-reg #regGlobal_tips {
+    position: absolute;
+    top:50px;
+}
+.i-reg .reg-tips-wrong {
+    color:#f00
+}
+.i-reg .submit {
+    background:#f8fcf1;
+    border-top:1px solid #e0f2bf;
+    clear:both;
+    height:45px;
+    text-align:center;
+    z-index:0;
+    position:absolute;
+    bottom:-10px;
+    width:445px
+}
+.i-reg .phrase-tips {
+    padding-left:108px
+}
+.i-reg .btn-register, .i-reg .btn-register-loading {
+    background:url(http://w.qhimg.com/images/v2/i360/reg_openapp/imgbg.png) no-repeat -162px 0;
+    border:0;
+    cursor:pointer;
+    height:29px;
+    margin:8px auto 0;
+    width:80px;
+    text-indent:-999em;
+    display: block;
+}
+.i-reg .rules {
+    display:none
+}
+.i-reg .dologin {
+    position:absolute;
+    bottom:10px;
+    right:20px
+}
+.i-reg .icon-success, .i-reg .icon-wrong {
+    display:inline-block;
+    background:url(http://w.qhimg.com/images/v2/i360/reg_openapp/imgbg.png) no-repeat;
+    height:14px;
+    left:350px;
+    overflow:hidden;
+    margin-left:10px;
+    width:15px
+}
+.i-reg .icon-wrong {
+    background-position:0 -547px
+}
+.i-reg .icon-success {
+    background-position:0 -581px
+}
+.i-reg .reg-global-error,
+.i-reg .reg-global-success,
+.i-reg .reg-global-loading
+ {
+    margin-left: 109px;
+}
+.i-reg .reg-global-error{
+    color: red;
+}

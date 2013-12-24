@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <script src="../../../js/vendor/jquery/jquery.js"></script>
+    <script src="../../js/vendor/requirejs/require.js"></script>
+    <script src="../../js/vendor/requirejs/require.config.js"></script>
+    <script>
+        require(['./mp3player'], function(MP3Player) {
+
+
+        })
+    </script>
+
+   <!--
+    <script src="../../../js/vendor/seajs/sea.js"></script>
+
+    <script>
+        seajs.use(['./mp3player.js'], function (MP3Player) {
+            var player = new MP3Player();
+            $('a').hover(
+                function(){
+                    player.play($(this).data('src'));
+                },
+                function(){
+                    player.stop();
+                }
+            )
+        })
+    </script>
+
+    <script src="mp3player.js"></script>
+    <script>
+        jQuery(function ($) {
+            var player = new MP3Player();
+            $('a').hover(
+                function(){
+                    player.play($(this).data('src'));
+                },
+                function(){
+                    player.stop();
+                }
+            )
+        });
+    </script>
+-->
+</body>
+</html>

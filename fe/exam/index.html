@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>aaaa</title>
+    <style>
+        .current{border:1px solid #f00;}
+        .m-exam-checked{border:1px solid #0f0;}
+    </style>
+</head>
+<body>
+<div id="examWrap">
+    <ul id="examTabNav">
+        <li class="current">语文
+            <ul>
+                <li>a</li>
+                <li>b</li>
+            </ul>
+        </li>
+        <li>数学</li>
+        <li>英语</li>
+    </ul>
+
+    <ul id="examTabContent">
+        <li data-course="语文" class="m-exam-checked">for 语文
+            <label><input type="radio" name="yw" value="一年级" checked>一年级</label>
+            <label><input type="radio" name="yw" value="二年级">二年级</label>
+            <label><input type="radio" name="yw" value="三年级">三年级</label>
+            <label><input type="radio" name="yw" value="四年级">四年级</label>
+        </li>
+        <li data-course="数学" style="display:none">for 数学
+            <label><input type="radio" name="sx" value="一年级" checked>一年级</label>
+            <label><input type="radio" name="sx" value="二年级">二年级</label>
+            <label><input type="radio" name="sx" value="三年级">三年级</label>
+            <label><input type="radio" name="sx" value="四年级">四年级</label>
+        </li>
+        <li data-course="英语"  style="display:none">for 英语
+            <label><input type="radio" name="en" value="一年级" checked>一年级</label>
+            <label><input type="radio" name="en" value="二年级">二年级</label>
+            <label><input type="radio" name="en" value="三年级">三年级</label>
+            <label><input type="radio" name="en" value="四年级">四年级</label>
+        </li>
+    </ul>
+
+    <div class="i-exam" id="examListWrap"></div>
+    <script type="text/tpl" id="examList">
+        <ul>
+            {{#each items}}
+            <li>
+                <div class="i-exam-title">
+                    {{index}} {{title}}
+                </div>
+                <div class="i-exam-choices">
+                    <ul>
+                        {{#each choices}}
+                        <li>{{index}}  {{.}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <div id="examResult">
+            <button id="examViewAnswer">查看答案</button>
+            <p style="display:none" id="examAnswer"></p>
+        </div>
+    </script>
+</div>
+
+<script src="../asset/js/jquery-1.8.1.min.js"></script>
+<script src="../asset/js/amd_modules/tab/tab.js"></script>
+<script src="../asset/js/amd_modules/handlebars/handlebars.js"></script>
+<script src="exam.js"></script>
+</body>
+</html>

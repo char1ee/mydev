@@ -1,0 +1,101 @@
+.i-kiddesk *{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: #666;
+}
+.i-kiddesk a{
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+}
+.i-kiddesk a:hover{
+    text-decoration: underline;
+}
+.i-kiddesk {
+    background: #fff;
+}
+.i-kiddesk .header{
+    background: #fff
+}
+.i-kiddesk .header-wrap {
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+}
+.i-kiddesk .logo a{
+    display: block;
+    width: 205px;
+    height: 85px;
+    background: url('../../img/kiddesk/logo.png') no-repeat;
+    float: left;
+    text-indent: -99em;
+    overflow: hidden;
+}
+.i-kiddesk .nav {
+    float: right;
+    padding-top: 43px;
+    width:600px;
+    overflow: hidden;
+}
+.i-kiddesk .nav ul{
+    width:10000px;
+    font-size: 0;
+}
+.i-kiddesk .nav li {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 26px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+}
+.i-kiddesk .nav li a{
+    font-size: 18px;
+}
+
+.i-kiddesk .slide-wrap {
+
+}
+.i-kiddesk .solidli{
+    display: block;
+    background: url('../../img/kiddesk/banner.png') #00a8e9 50% 0;
+    height: 500px;
+}
+.i-kiddesk .solidli .box{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.i-kiddesk .solidli a{
+    position: absolute;
+    top:267px;
+    left: 563px;
+    display: block;
+    width:198px;
+    height: 61px;
+    text-indent: -99em;
+    overflow: hidden;
+}
+.i-kiddesk .solid-target {
+    display: none;
+}
+
+.i-kiddesk .content img{
+    display: block;
+    width: 1000px;
+    height: 445px;
+    margin: 0 auto;
+}
+
+.i-kiddesk .footer {
+    padding-top: 60px;
+    height: 120px;
+    background: #E8EBF0;
+    text-align: center;
+}
+
+.i-kiddesk .footer p{
+    margin-bottom: .8em;
+}

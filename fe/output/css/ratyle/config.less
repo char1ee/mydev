@@ -1,0 +1,86 @@
+// @名称： config.less;
+// @作者： 耗子
+// @功能： 项目配置文件，不输出css
+
+// 全局变量
+// 色值
+@black:#333;		  //黑
+@white:#fff;		  //白
+@gray:#999;		      //灰
+@red:#ba0000;		  //红
+@pink:#c3325f;	      //粉
+@orange:#f89406;	  //橙
+@yellow:#ffc40d;	  //黄
+@green:#46a546;	      //绿
+@blue:#2A7CA2;	      //蓝
+@blueDark:#0064cd;	  //深蓝
+@brown:#d3b57f;	      //棕色文字
+@brownDark:#623319;	  //棕色背景
+@purple:#7a43b6;	  //紫
+@color-1:#be0000;
+@color-2:#a20101;
+@color-3:#0ca6f6;
+@color-4:#4b4b4b;
+@color-5:#ffffff;
+@color-6:#ededed;
+@color-7:#f7f7f7;
+@color-8:#dbdada;
+@color-9:#afafaf;
+@color-10:#8a8888;
+@color-11:#000000;
+@color-12:#E8E9EA;
+
+@baseColor:@color-4;      //默认颜色值
+
+//链接
+@linkColor:@color-4;          //默认链接颜色值
+@linkColorHover:@red;     //默认hover链接色
+@baseFontSize:12px;       //默认字体大小
+@baseLineHeight:1.5em;    //默认行高
+//字体
+@baseFontFamily:~'tahoma,arial,helvetica,\5fae\8f6f\96c5\9ed1,\5b8b\4f53,sans-serif'; //默认字体
+@bigTitleFontFamily: ~'\5fae\8f6f\96c5\9ed1,\9ed1\4f53';	//黑体
+//栅格化
+@girdMaxWidth : 960px;
+@girdNum : 24;
+@gridWidth : @girdMaxWidth / @girdNum;
+
+@minWidth:1000px;
+@maxWidth: 1440px;
+@VERSION :'1.0';
+@THEME_ASSET_DIR :'/asset/theme/default';
+
+// GRID
+// --------------------------------------------------
+
+
+// Default 940px grid
+// -------------------------
+@gridColumns:             20;
+@gridColumnWidth:         40px;
+@gridGutterWidth:         10px;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// 1200px min
+@gridColumnWidth1200:     70px;
+@gridGutterWidth1200:     30px;
+@gridRowWidth1200:        (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+
+// 768px-979px
+@gridColumnWidth768:      42px;
+@gridGutterWidth768:      20px;
+@gridRowWidth768:         (@gridColumns * @gridColumnWidth768) + (@gridGutterWidth768 * (@gridColumns - 1));
+
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
+@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
+
+// 1200px min
+@fluidGridColumnWidth1200:     percentage(@gridColumnWidth1200/@gridRowWidth1200);
+@fluidGridGutterWidth1200:     percentage(@gridGutterWidth1200/@gridRowWidth1200);
+
+// 768px-979px
+@fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
+@fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);

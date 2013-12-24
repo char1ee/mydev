@@ -1,0 +1,16 @@
+callback({
+    "examtype": "choices",
+    "items": [{
+        "title": "50 - 5 * 8 = ( )",
+        "choices": ["A.1", "B.3", "C.4"],
+        "answer": "A"
+    }, {
+        "title": "5*10=?",
+        "choices": ["A.1", "B.3", "C.4"],
+        "answer": "B"
+    }, {
+        "title": "10*10=?",
+        "choices": ["A.1", "B.3", "C.4"],
+        "answer": "D"
+    }]
+})

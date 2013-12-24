@@ -1,0 +1,13 @@
+/.idea
+/_tmp
+node_modules/
+sftp-config.json
+
+.DS_Store
+*.db
+*.bak
+*.tmp
+*.cmd
+*.log
+~*
+zyz/

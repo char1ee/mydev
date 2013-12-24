@@ -1,0 +1,57 @@
+/*
+ *	Grid
+ */
+
+/* layout */
+.doc-hd,
+.doc-bd,
+.doc-ft{width:980px;margin:0 auto;}\
+
+
+
+
+/* custom grid */
+.grid-1c,
+.grid-2c1,
+.grid-2c2,
+.grid-3c1{width:980px;margin:0 auto;*zoom:1;}
+
+.grid-2c1 .col-1{width:765px;float:left;}
+.grid-2c1 .col-2{width:222px;float:right;}
+
+.grid-2c2 .col-1{width:495px;float:left;}
+.grid-2c2 .col-2{width:495px;float:right;}
+
+.grid-3c1 .col-1{width:300px;float:left;margin-right:10px;}
+.grid-3c1 .col-2{width:380px;float:left;}
+.grid-3c1 .col-3{width:300px;float:right;}
+
+.grid-1c:after,
+.grid-2c1:after,
+.grid-2c2:after,
+.grid-3c1:after,
+.grid-cell:after,
+.row:after{content:"\0020";display:block;height:0;clear:both;visibility:hidden;}
+.grid-1c,
+.grid-2c1,
+.grid-2c2,
+.grid-3c1,
+.grid-cell,
+.row{clear:both;*zoom:1;}
+
+/* 内部栅格 */
+.grid-cell-1 .cell-1{}
+.grid-cell-1 .cell-2{}
+.grid-cell-1 .cell-3{}
+
+/* percent */
+.pct-1o5{width:20%;float:left;}
+.pct-1o4{width:25%;float:left;}
+.pct-1o3{width:33.3%;float:left;}
+.pct-1o2{width:50%;float:left;}
+.pct-2o5{width:40%;float:left;}
+.pct-3o5{width:60%;float:left;}
+.pct-2o3{width:66.6%;float:left;}
+.pct-3o4{width:75%;float:left;}
+.pct-4o5{width:80%;float:left;}
+.pct-1o1{width:100%;}
