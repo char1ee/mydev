@@ -45,6 +45,8 @@
             _this.parentWidth = $(cfg.parent).width();
             _this.parentHeight = $(cfg.parent).height();
             _this._makeSnow(_this.cfg.num);
+
+            _this.isStop = false;
             _this.snow($('.snow-flake', _this.cfg.parent));
         },
         _makeSnow: function (num) {
@@ -86,7 +88,7 @@
                         } else {
                             _self._y += 1;
                         }
-                        !_selfSnow.isClean && setTimeout(loop, 27);
+                        !_selfSnow.isStop && setTimeout(loop, 27);
                     }, 0);
                 },
                 mvX: function ($snowFlake) {
@@ -110,7 +112,7 @@
                                 --flag;
                             }
                         }
-                        !_selfSnow.isClean && setTimeout(loop, 40);
+                        !_selfSnow.isStop && setTimeout(loop, 40);
                     }, 0);
                 },
                 windHandler: function () {
@@ -144,12 +146,16 @@
         add: function (n) {
             n = n || 1;
             this._makeSnow(n);
-            this.isClean = false;
+            this.isStop = false;
             return this;
         },
+        stop: function () {
+            this.isStop = true;
+            return this;
+        }
         clean: function () {
             // 清空雪花
-            this.isClean = true;
+            this.stop();
             $('.snow-flake', this.cfg.parent).remove();
             return this;
         },
