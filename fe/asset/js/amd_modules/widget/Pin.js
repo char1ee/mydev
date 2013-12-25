@@ -204,16 +204,16 @@ define(function () {
             } else {
                 return false
             }
-            console.log(flag)
+            // console.log(flag)
             return true;
         },
         _scrollHandler : function () {
             var _this = this;
             if ($document.scrollTop() >= _this.offTop) {
-                console.log(1);
+                // console.log(1);
                 _this.cfg.touchTopHnadler(_this.$element);
             } else {
-                console.log(0)
+                // console.log(0)
                 _this.$element.removeClass(_this.cfg._pinCls);
             }
         },
@@ -221,7 +221,7 @@ define(function () {
 
         },
         show: function (t) {
-            console.log('show')
+            // console.log('show')
             this.$element.fadeIn(t);
             this.setPosition(this.$element);
             return this;

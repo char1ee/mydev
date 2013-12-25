@@ -35,7 +35,7 @@
             parent: 'body',
             num: 15, // 雪花总数目
             typesNum : 3 // 雪花类型数
-        };
+        }; w
         return new Snow.fn.init($.extend(defaults, param));
     };
     Snow.fn = Snow.prototype = {

@@ -29,7 +29,7 @@ require([
         minWidth: 0,
         triggerTop: 500,
         position: {
-            right: 0,
+            right: -15,
             bottom: 25
         }
     });
@@ -42,9 +42,9 @@ require([
     new Share({
         element: '.weibo',
         share: {
-            summary : $.trim($('#shareSummary').text()),
-            url:'http://127.0.0.1:3001/asset/html/xueba/qz.html',
-            tags    : '360教育逆袭学霸'
+            summary : _share.summary,
+            url     : _share.url,
+            tags    : _share.tags
         }
     });
 
@@ -86,4 +86,14 @@ require([
             });
         });
     }
+
+    // 外链
+    $(document).on('click', 'a', function () {
+        var host = document.location.host;
+        var href = $(this).attr('href');
+        if(href.indexOf(host) < 0 && /^http/.test(href)) {
+            window.open(href);
+            return false;
+        }
+    });
 });

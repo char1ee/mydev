@@ -58,7 +58,7 @@ define(function () {
                 e.stopPropagation();
                 e.preventDefault();
             });
-            _this.$element.on('click', function(){
+            _this.$element.on('click', _this.cfg.carCtrlItem, function(){
                 return false;
             })
         },
