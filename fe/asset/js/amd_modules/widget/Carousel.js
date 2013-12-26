@@ -55,12 +55,12 @@ define(function () {
             var _this = this;
             _this.$element.on(_this.cfg.eventTrigger, _this.cfg.carCtrlItem, function (e) {
                 _this.switchTo($(this).index());
-                e.stopPropagation();
-                e.preventDefault();
+                // e.stopPropagation();
+                // e.preventDefault();
             });
-            _this.$element.on('click', _this.cfg.carCtrlItem, function(){
-                return false;
-            })
+            // _this.$element.on('click', _this.cfg.carCtrlItem, function(){
+            //     return false;
+            // })
         },
         switchTo: function (i) {
             var _this = this;

@@ -17,7 +17,7 @@
                         <?php $qcmsData  = $extProxy->call('RemoteDataAccessExtension:getData', array('http://tiger.edu.360.cn/data/get/id/2013112010', '10.108.214.157'));  ?>
                         <?php foreach($qcmsData as $i => $trdata) { if ($i < 4) {?>
                         <li class="u-piclist-item">
-                            <a target="_blank" href="<?php echo $trdata['url'];?>">
+                            <a target="_blank" href="<?php echo $trdata['url'];?>" class="u-light">
                                 <img width="140" height="100" class="u-piclist-pic" alt="" src="<?php echo $trdata['midPic'];?>" />
                                 <span class="u-piclist-title"><?php echo $trdata['title'];?></span>
                             </a>
@@ -46,7 +46,7 @@
                         <?php $qcmsData  = $extProxy->call('RemoteDataAccessExtension:getData', array('http://tiger.edu.360.cn/data/get/id/2013112012', '10.108.214.157'));  ?>
                         <?php foreach($qcmsData as $i => $trdata) { if ($i < 4) {?>
                         <li class="u-piclist-item">
-                            <a target="_blank" href="<?php echo $trdata['url'];?>">
+                            <a target="_blank" href="<?php echo $trdata['url'];?>" class="u-light">
                                 <img width="140" height="100" class="u-piclist-pic" alt="" src="<?php echo $trdata['midPic'];?>" />
                                 <span class="u-piclist-title"><?php echo $trdata['title'];?></span>
                             </a>
@@ -75,7 +75,7 @@
                         <?php $qcmsData  = $extProxy->call('RemoteDataAccessExtension:getData', array('http://tiger.edu.360.cn/data/get/id/2013112014', '10.108.214.157'));  ?>
                         <?php foreach($qcmsData as $i => $trdata) { if ($i < 4) {?>
                         <li class="u-piclist-item">
-                            <a target="_blank" href="<?php echo $trdata['url'];?>">
+                            <a target="_blank" href="<?php echo $trdata['url'];?>" class="u-light">
                                 <img width="140" height="100" class="u-piclist-pic" alt="" src="<?php echo $trdata['midPic'];?>" />
                                 <span class="u-piclist-title"><?php echo $trdata['title'];?></span>
                             </a>
@@ -104,7 +104,7 @@
                         <?php $qcmsData  = $extProxy->call('RemoteDataAccessExtension:getData', array('http://tiger.edu.360.cn/data/get/id/2013112016', '10.108.214.157'));  ?>
                         <?php foreach($qcmsData as $i => $trdata) { if ($i < 4) {?>
                         <li class="u-piclist-item">
-                            <a target="_blank" href="<?php echo $trdata['url'];?>">
+                            <a target="_blank" href="<?php echo $trdata['url'];?>" class="u-light">
                                 <img width="140" height="100" class="u-piclist-pic" alt="" src="<?php echo $trdata['midPic'];?>" />
                                 <span class="u-piclist-title"><?php echo $trdata['title'];?></span>
                             </a>
@@ -133,7 +133,7 @@
                         <?php $qcmsData  = $extProxy->call('RemoteDataAccessExtension:getData', array('http://tiger.edu.360.cn/data/get/id/2013112018', '10.108.214.157'));  ?>
                         <?php foreach($qcmsData as $i => $trdata) { if ($i < 4) {?>
                         <li class="u-piclist-item">
-                            <a target="_blank" href="<?php echo $trdata['url'];?>">
+                            <a target="_blank" href="<?php echo $trdata['url'];?>" class="u-light">
                                 <img width="140" height="100" class="u-piclist-pic" alt="" src="<?php echo $trdata['midPic'];?>" />
                                 <span class="u-piclist-title"><?php echo $trdata['title'];?></span>
                             </a>
@@ -397,7 +397,7 @@
                                 <span class="i-order-list-index"><?php echo $i;?></span>
                                 <span class=""><?php echo $trdata['title'];?></span>
                                 -
-                                <a href="<?php echo $trdata['url'];?>" title="<?php $trdata['desc'];?>"><?php echo mb_substr($trdata['desc'], 0, 14, 'utf-8');?></a>
+                                <a href="<?php echo $trdata['url'];?>" title="<?php $trdata['desc'];?>"><?php echo mb_substr($trdata['desc'], 0, 16, 'utf-8');?></a>
                             </li>
                             <?php }}?>
                         </ul>

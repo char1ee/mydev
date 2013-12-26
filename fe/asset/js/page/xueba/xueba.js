@@ -11,10 +11,10 @@ require([
         });
     });
 
-// gotop
+    // gotop
     var $pinHtml = $(
-        '<div class="pin">' +
-            '<a href="#nxbxk" class="pin-nxbxk">逆袭必修课</a>' +
+        '<div class="pin" id="pin" bk>' +
+            '<a href="#xb" class="pin-nxbxk">逆袭必修课</a>' +
             '<a href="#nxmj"  class="pin-nxmj">逆袭秘籍</a>' +
             '<a href="#mszl"  class="pin-mszl">名师指路</a>' +
             '<a href="#share" class="pin-zfyl">转发有礼</a>' +
@@ -28,6 +28,8 @@ require([
         wrapWidth: 1000,
         minWidth: 0,
         triggerTop: 500,
+        isFixed:false,
+        alwaysShow: true,
         position: {
             right: -15,
             bottom: 25
@@ -44,7 +46,8 @@ require([
         share: {
             summary : _share.summary,
             url     : _share.url,
-            tags    : _share.tags
+            tags    : _share.tags,
+            pics    : _share.pics
         }
     });
 
