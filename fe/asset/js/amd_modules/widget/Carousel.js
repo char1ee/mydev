@@ -3,7 +3,10 @@ define(function () {
         element: '#car',
         index: 0, // 初始页
         events : {
-
+            carCtrlItem: function (thisCtrlItem, e) {
+                this.switchTo($(thisCtrlItem).index());
+                e.stopPropagation(),e.preventDefault();
+            }
         },
         carCtrl: '.car-ctrl',
         carCtrlItem: '.car-ctrl-item',
@@ -33,7 +36,7 @@ define(function () {
     };
     var Carousel = function (param) {
         var cfg = {};
-        $.extend(cfg, defaults, param);
+        $.extend(true, cfg, defaults, param);
         return new Carousel.fn.init(cfg);
     };
     Carousel.fn = Carousel.prototype = {
@@ -54,13 +57,8 @@ define(function () {
         _bindEvent: function () {
             var _this = this;
             _this.$element.on(_this.cfg.eventTrigger, _this.cfg.carCtrlItem, function (e) {
-                _this.switchTo($(this).index());
-                // e.stopPropagation();
-                // e.preventDefault();
+                _this.cfg.events.carCtrlItem.call(_this, this, e);
             });
-            // _this.$element.on('click', _this.cfg.carCtrlItem, function(){
-            //     return false;
-            // })
         },
         switchTo: function (i) {
             var _this = this;

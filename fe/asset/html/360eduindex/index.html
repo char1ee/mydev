@@ -308,6 +308,39 @@
 			</div>
 			<div class="u-block-bd u-pl10 u-pr10">
 				<div class="i-datetable">
+					<script type="tpl/ejs" id="examApplyTimeTpl">
+						<% for(var i=0; i<data.length; i++) {%>
+							<tr class="top">
+								<td class="c0"><%= data[i].exam_name %></td>
+								<td class="c1"><%= data[i].apply_time_desc %></td>
+								<td class="c2"><a href="<%= data[i].apply_address %>">去报名</a></td>
+								<td class="c3">指南</td>
+								<td class="c4">课程</td>
+							</tr>
+						<% } %>
+					</script>
+					<script type="tpl/ejs" id="examExamingTimeTpl">
+						<% for(var i=0; i<data.length; i++) {%>
+							<tr class="top">
+								<td class="c0"><%= data[i].exam_name %></td>
+								<td class="c1"><%= data[i].exam_time_desc %></td>
+								<td class="c2"><a href="<%= data[i].apply_address %>">去报名</a></td>
+								<td class="c3">指南</td>
+								<td class="c4">课程</td>
+							</tr>
+						<% } %>
+					</script>
+					<script type="tpl/ejs" id="examScoreTimeTpl">
+						<% for(var i=0; i<data.length; i++) {%>
+							<tr class="top">
+								<td class="c0"><%= data[i].exam_name %></td>
+								<td class="c1"><%= data[i].score_time_desc %></td>
+								<td class="c2"><a href="<%= data[i].apply_address %>">去报名</a></td>
+								<td class="c3">指南</td>
+								<td class="c4">课程</td>
+							</tr>
+						<% } %>
+					</script>
 					<div class="tab-nav">
 						<h3 class="tab-nav-li tab-nav-current"><a href="#">正在报名</a>
 						</h3>
@@ -317,162 +350,9 @@
 						</h3>
 					</div>
 					<div class="tab-content">
-						<!-- tab1 -->
-						<table>
-							<tr class="top">
-								<td class="c0">计算机三级</td>
-								<td class="c1">11/02-12/3</td>
-								<td class="c2">去报名</td>
-								<td class="c3">指南</td>
-								<td class="c4">课程</td>
-							</tr>
-							<tr class="top">
-								<td class="c0">计算机三级</td>
-								<td class="c1">11/02-12/3</td>
-								<td class="c2"><a href="#">去报名</a>
-								</td>
-								<td class="c3">指南</td>
-								<td class="c4">课程</td>
-							</tr>
-							<tr class="top">
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-						</table>
-						<!-- /tab1 -->
-						<table>
-							<tr class="top">
-								<td class="c0">计算2机三级</td>
-								<td class="c1">11/02-12/3</td>
-								<td class="c2">去报名</td>
-								<td class="c3">指南</td>
-								<td class="c4">课程</td>
-							</tr>
-							<tr class="top">
-								<td class="c0">计算机三级</td>
-								<td class="c1">11/02-12/3</td>
-								<td class="c2">去报名</td>
-								<td class="c3">指南</td>
-								<td class="c4">课程</td>
-							</tr>
-							<tr class="top">
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-						</table>
-						<table>
-							<tr class="top">
-								<td class="c0">计算机三级3</td>
-								<td class="c1">11/02-12/3</td>
-								<td class="c2">去报名</td>
-								<td class="c3">指南</td>
-								<td class="c4">课程</td>
-							</tr>
-							<tr class="top">
-								<td class="c0">计算机三级</td>
-								<td class="c1">11/02-12/3</td>
-								<td class="c2">去报名</td>
-								<td class="c3">指南</td>
-								<td class="c4">课程</td>
-							</tr>
-							<tr class="top">
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-							<tr>
-								<td>计算机三级</td>
-								<td>11/02-12/3</td>
-								<td>去报名</td>
-								<td>指南</td>
-								<td>课程</td>
-							</tr>
-						</table>
+						<table></table>
+						<table></table>
+						<table></table>
 					</div>
 				</div>
 			</div>

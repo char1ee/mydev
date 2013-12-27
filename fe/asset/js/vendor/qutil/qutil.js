@@ -206,4 +206,3 @@ onerror = function(msg, jsurl, line) {
     // html5shim
     window.qutil = qutil;
 })(this, this.document, Array.prototype, String.prototype, Object.prototype);
-
