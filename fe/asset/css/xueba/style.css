@@ -803,7 +803,6 @@ body {
     border:1px solid #f4b98f;
     font-size:12px;
     width:393px;
-    height:138px;
     padding:10px 20px;
     border-radius:10px;
     position:relative
@@ -880,10 +879,15 @@ body {
     color:#634b1e
 }
 .pin {
-    position:fixed;
-    left:50px;
-    top:1500px;
+    position:absolute;
+    left:50%;
+    top:700px;
+    margin-left:518px;
     _display:none;
+}
+.pin.fixed{
+    position: fixed !important;
+    top: 10%;
 }
 .pin a {
     display:block;
@@ -912,7 +916,10 @@ body {
     background-position:-100px 0
 }
 .pin .pin-nxmj:hover {
-    background-position:-100px -125px
+    background-position:-100px -125p
+
+
+    x
 }
 .pin .pin-mszl:hover {
     background-position:-100px -253px

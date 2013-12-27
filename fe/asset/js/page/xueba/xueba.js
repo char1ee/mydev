@@ -1,9 +1,9 @@
 require([
     '../../amd_modules/widget/Tab',
-    '../../amd_modules/widget/Pin',
+    // '../../amd_modules/widget/Pin',
     '../../amd_modules/Share/Share',
     '../../amd_modules/Scroll/Scroll'
-], function (Tab, Pin, Share, Scroll) {
+], function (Tab, Share, Scroll) {
     $('.tab').each(function () {
         new Tab({
             element: this,
@@ -13,32 +13,27 @@ require([
 
     // gotop
     var $pinHtml = $(
-        '<div class="pin" id="pin" bk>' +
-            '<a href="#xb" class="pin-nxbxk">逆袭必修课</a>' +
-            '<a href="#nxmj"  class="pin-nxmj">逆袭秘籍</a>' +
-            '<a href="#mszl"  class="pin-mszl">名师指路</a>' +
-            '<a href="#share" class="pin-zfyl">转发有礼</a>' +
-            '<a href="#top"   class="pin-gotop">回顶部</a>' +
-        '</div>'
+    '<div class="pin" id="pin" bk>' +
+        '<a href="#xb" class="pin-nxbxk">逆袭必修课</a>' +
+        '<a href="#nxmj"  class="pin-nxmj">逆袭秘籍</a>' +
+        '<a href="#mszl"  class="pin-mszl">名师指路</a>' +
+        '<a href="#share" class="pin-zfyl">转发有礼</a>' +
+        '<a href="#top"   class="pin-gotop">回顶部</a>' +
+    '</div>'
     );
-
     $('body').append($pinHtml);
-    var pin = new Pin({
-        element: $pinHtml,
-        wrapWidth: 1000,
-        minWidth: 0,
-        triggerTop: 500,
-        isFixed:false,
-        alwaysShow: true,
-        position: {
-            right: -15,
-            bottom: 25
+    var $document = $(document);
+    var $window = $(window);
+    var winWidth = $(window).width();
+    var winHeight = $(window).height();
+    $(window).on('scroll', function () {
+        if($document.scrollTop() > 533){
+            $pinHtml.addClass('fixed');
+        } else {
+            $pinHtml.removeClass('fixed');
         }
-    });
-    var a = [];
-    $('img').each(function () {
-        a.push($(this).attr('src'));
-    });
+    }).trigger('scroll');
+
 
     // 分享
     new Share({
