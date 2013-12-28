@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>Document</title>
+</head>
+<style>
+html,body{
+    background: #c6cacf url("data:image/gif;base64,R0lGODlhBQAvAIAAAMbKzsbKzyH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUM3QUM3MUFGMUNEMTFFMUI5QjBEMDZFMEM2RTlCOTgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUM3QUM3MUJGMUNEMTFFMUI5QjBEMDZFMEM2RTlCOTgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQzdBQzcxOEYxQ0QxMUUxQjlCMEQwNkUwQzZFOUI5OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQzdBQzcxOUYxQ0QxMUUxQjlCMEQwNkUwQzZFOUI5OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAAAAAAALAAAAAAFAC8AAAITjI+py+0Po5xUgouz3rz7D4ZcAQA7") repeat;
+}
+*{margin: 0; padding: 0;box-sizing:border-box;}
+html{
+    font-family: Tahoma,Arial,Helvetica,\5b8b\4f53,sans-serif;
+    font-size:14px;
+    line-height:1.5;
+}
+html,body{height: 100%;}
+    #wrap {
+        padding:5px 15px;
+        background: #fff;
+        width: 600px;
+        min-height: 98%;
+        margin:5px auto 0;
+        box-shadow: 5px 5px 5px #333;
+        border: 1px solid #A9B0B8;
+        box-shadow: 0 0 11px 2px rgba(0, 0, 0, 0.3);
+        -webkit-transition: all .2s;
+    }
+    #wrap.hide{
+        opacity: 0;
+        position: absolute;
+    }
+    p {
+        text-indent: 2em;
+    }
+    #letter{
+        /*border:1px solid #f00;*/
+        display: inline;
+    }
+    #letter img {
+        display: inline;
+        vertical-align:text-bottom;
+    }
+    .blink:after{
+        background-color: #000;
+        color: #fff;
+        display: inline-block;
+        margin-bottom: -.12em;
+        margin-left: .4em;
+        min-width: 1px;
+        vertical-align: baseline;
+        width: .02em;
+        content: ' .';
+        -webkit-animation: blink 1s step-end infinite;
+    }
+    #letter .spaceH{
+        height: 50px;
+    }
+    .btnwrap {
+        margin-top:50px;
+        text-align: center;
+        -webkit-animation: btnwrap 1s;
+    }
+    button{
+        cursor: pointer;
+        border:1px solid #cf0;
+        box-shadow:inset 0 1px 1px #76dd53;
+        font-size:18px;
+        color:#fff;
+        text-shadow:1px 1px 1px #666;
+        border:1px solid #0f9b08;
+        border-radius:3px;
+        background:#3bce09;
+        padding:3px 22px;
+        background-image:-webkit-linear-gradient(top, #3bce09, #39be08);
+        background-image:-moz-linear-gradient(top, #3bce09, #39be08);
+        background-image:-o-linear-gradient(top, #3bce09, #39be08);
+        background-image:-ms-linear-gradient(top, #3bce09, #39be08);
+        background-image:linear-gradient(top, #3bce09, #39be08)
+    }
+    button:hover {
+        border-color:#11b308;
+        background:#40d00b;
+        background-image:-webkit-linear-gradient(top, #40d00b, #38c906);
+        background-image:-moz-linear-gradient(top, #40d00b, #38c906);
+        background-image:-o-linear-gradient(top, #40d00b, #38c906);
+        background-image:-ms-linear-gradient(top, #40d00b, #38c906);
+        background-image:linear-gradient(top, #40d00b, #38c906);
+        text-decoration:none;
+        color:#fff;
+    }
+    button#cancel{
+        margin-right:30px;position: relative;
+        -webkit-transition: all .2s;
+    }
+    @-webkit-keyframes blink {
+        0%{opacity: 1;}
+        50% {opacity: 0}
+    }
+    @-webkit-keyframes btnwrap {
+        0%{opacity: 0;}
+        100% {opacity: 1;}
+    }
+</style>
+<body>
+    <audio preload="auto" loop>
+      <source src="syz.ogg" type="audio/ogg">
+      <source src="syz.mp3" type="audio/mpeg">
+    </audio>
+    <div id="envelope">
+        <button id="view">看信</button>
+    </div>
+    <div id="wrap" class="hide">
+        <div id="letter"></div>
+    </div>
+    <script>
+        var pics = (function () {
+            _pics = {
+                tx: 'http://p7.qhimg.com/t013df9539df9598466.gif'
+            }
+            return function (i) {
+                return '<img src="' + _pics[i] + '">';
+            }
+        })();
+        var letter = []
+            .concat('致：'.split('')).concat('<br>')
+            .concat('　　小香子同学'.split('')).concat('<br>')
+            .concat('　　我想你一定收到过情书，但绝对没有收到过如此奇葩的'.split('')).concat(pics('tx'))
+        // envelope
+        function envelopeInit () {
+            var oEnvelope = document.getElementById('envelope');
+            var oView = document.getElementById('view');
+            var audio = document.getElementsByTagName('audio')[0];
+            oView.onclick = function () {
+                audio.play();
+                oEnvelope.setAttribute('class' ,'hide');
+                document.getElementById('wrap').setAttribute('class', '');
+                letterInit();
+            }
+        }
+        // letter
+        function letterInit (){
+            var printer = {
+                init : function (param) {
+                    this.speed = param.speed === 0?0: param.speed || 100;
+                    this.wrap = document.getElementById(param.wrap);
+                    this.onBegin = param.onBegin || function(){};
+                    this.onEnd = param.onEnd || function(){};
+                    this.content = param.content || [];
+                    this.hasEnd = true;
+                    this.print(this.content);
+                    return this;
+                },
+                _print: function() {
+                    var _this = this;
+                    var i = 0, l = _this.content.length;
+                    _this.hasEnd = false;
+                    setTimeout(function loop () {
+                        _this.wrap.innerHTML += _this.content[i];
+                        ++i;
+                        if(i < l) {
+                            setTimeout(loop, _this.speed)
+                        } else {
+                            _this.hasEnd = true;
+                            _this.end();
+                        }
+                    }, 0);
+                    return _this;
+                },
+                print: function (str) {
+                    this.onBegin.call(this);
+                    this.string += str;
+                    this.hasEnd && this._print();
+                    return this;
+                },
+                end: function () {
+                    this.onEnd.call(this);
+                    return this;
+                }
+
+            }
+
+            printer.init({
+                speed:100,
+                wrap: 'letter',
+                content: letter,
+                onBegin: function(){
+                    this.wrap.setAttribute('class', 'blink');
+                },
+                onEnd: function () {
+                    var _this = this;
+                    _this.wrap.innerHTML +=
+                        '<div class="btnwrap"><button id="cancel">对不起</button><button id="ok">我愿意</button></div>';
+                    _this.wrap.setAttribute('class', '');
+
+                    var oCancel = document.getElementById('cancel');
+                    var hoveTime = 0;
+                    oCancel.addEventListener('mouseover', function () {
+                        function random(start, end) {
+                            switch (arguments.length) {
+                                case 1 :
+                                    return Math.random() * start  + 1;
+                                case 2 :
+                                    return Math.random() * (end - start + 1) + start;
+                                default :
+                                    return Math.random();
+                            }
+                        }
+                        ++hoveTime;
+                        switch(hoveTime) {
+                            case 3:
+                                this.innerHTML = '挖卡卡';
+                                break;
+                            case 10:
+                                this.innerHTML = '放弃吧！';
+                                break;
+                        }
+                        this.style.left = (+new Date %2 ?'':'-') + random(100, 500) + 'px';
+                        this.style.top = (+new Date %2 ?'':'-') + random(30, 200) + 'px';
+                    }, false)
+                    oCancel.addEventListener('click', function (){
+                        this.innerHTML = '我闪！';
+                        setTimeout(function () {
+                            this.style.display = 'none';
+                        }.bind(this), 500)
+                    }, false)
+                }
+            });
+        }
+
+        envelopeInit();
+</script>
+</body>
+</html>

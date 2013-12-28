@@ -308,20 +308,28 @@
 			</div>
 			<div class="u-block-bd u-pl10 u-pr10">
 				<div class="i-datetable">
-					<script type="tpl/ejs" id="examApplyTimeTpl">
-						<% for(var i=0; i<data.length; i++) {%>
-							<tr class="top">
-								<td class="c0"><%= data[i].exam_name %></td>
-								<td class="c1"><%= data[i].apply_time_desc %></td>
+					<script type="tpl" id="examApplyTimeTpl">
+						<% for (var i = 0, l= data.length; i < l; ++i) {%>
+							<% if( i <= 2) { %>
+								<tr class="top">
+							<% }else{ %>
+								<tr>
+							<% } %>
+								<td class="c0"><%=data[i].exam_name %></td>
+								<td class="c1"><%=data[i].apply_time_desc %></td>
 								<td class="c2"><a href="<%= data[i].apply_address %>">去报名</a></td>
 								<td class="c3">指南</td>
 								<td class="c4">课程</td>
 							</tr>
 						<% } %>
 					</script>
-					<script type="tpl/ejs" id="examExamingTimeTpl">
-						<% for(var i=0; i<data.length; i++) {%>
-							<tr class="top">
+					<script type="tpl" id="examExamingTimeTpl">
+						<% for (var i = 0, l= data.length; i < l; ++i) {%>
+							<% if( i <= 2) { %>
+								<tr class="top">
+							<% }else{ %>
+								<tr>
+							<% } %>
 								<td class="c0"><%= data[i].exam_name %></td>
 								<td class="c1"><%= data[i].exam_time_desc %></td>
 								<td class="c2"><a href="<%= data[i].apply_address %>">去报名</a></td>
@@ -330,9 +338,13 @@
 							</tr>
 						<% } %>
 					</script>
-					<script type="tpl/ejs" id="examScoreTimeTpl">
-						<% for(var i=0; i<data.length; i++) {%>
-							<tr class="top">
+					<script type="tpl" id="examScoreTimeTpl">
+						<% for(var i=0; i<data.length; ++i) {%>
+							<% if( i <= 2) { %>
+								<tr class="top">
+							<% }else{ %>
+								<tr>
+							<% } %>
 								<td class="c0"><%= data[i].exam_name %></td>
 								<td class="c1"><%= data[i].score_time_desc %></td>
 								<td class="c2"><a href="<%= data[i].apply_address %>">去报名</a></td>

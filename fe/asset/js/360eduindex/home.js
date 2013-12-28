@@ -1,8 +1,8 @@
 require([
     '../../js/amd_modules/widget/Carousel',
-    '../amd_modules/ejs/ejs',
     './examCalendar'
-], function (car, EJS, getCalendar) {
+], function (car, getCalendar) {
+    var tmpl = qutil.tmpl;
     var cases;
     car({
         element: '.i-datetable',
@@ -22,18 +22,17 @@ require([
                 cases  = cases || {
                     applyTime: {
                         type: 'apply_time',
-                        tpl: new EJS({text: $('#examApplyTimeTpl').text()})
+                        tpl: tmpl('examApplyTimeTpl')
                     },
                     examTime: {
                         type: 'exam_time',
-                        tpl: new EJS({text: $('#examExamingTimeTpl').text()})
+                        tpl: tmpl('examExamingTimeTpl')
                     },
                     scoreTime: {
                         type: 'score_time',
-                        tpl: new EJS({text: $('#examScoreTimeTpl').text()})
+                        tpl: tmpl('examScoreTimeTpl')
                     }
                 };
-
                 var _case = cases[getArr[index]];
                 if (_case.data) {
                     _this.switchTo(index);
@@ -42,11 +41,7 @@ require([
                         type: _case.type
                     }, {cach: true}, function (data) {
                         _case.data = data;
-                        console.group();
-                        console.log(_case.data);
-                        console.log('索引是' + index);
-                        console.groupEnd();
-                        _this.$carContItem.eq(index).html(_case.tpl.render(data));
+                        _this.$carContItem.eq(index).html(_case.tpl(data));
                         _this.switchTo(index);
                     });
                 }

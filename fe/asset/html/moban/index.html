@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+var qutil = {}
+ qutil.template = function (tplStr) {
+    var OPEN_TAG = '<%',
+        CLOSE_TAG = '%>';
+
+    function _parse(tplStr) {
+       //     "var $out = []" +
+       //     "with ($data) {" +
+       //         "$out.push('<h3>')"+
+       //         "if (typeof content === 'string') {"+
+       //             "$out.push(content);"+
+       //         "}"+
+       //         "$out.push('h3');"+
+       //     "}" +
+       //     "return $out.join('');";
+        var ret = [];
+        ret.push('var $out=[];');
+        ret.push('with($data){');
+
+        ret.push(tplStr = tplStr
+            .replace(/[\r\t\n]/g, '\n')
+            .split(OPEN_TAG)
+            // .join('\t')
+            // .replace(new RegExp(OPEN_TAG, 'g'), '\t')
+            // .replace(new RegExp(CLOSE_TAG, 'g'), ';')
+        );
+        console.debug(tplStr);
+        document.write(tplStr);
+        ret.push("}")
+        ret.push('return $out.join("")');
+        return ret.join('');
+    }
+
+    var cache = _parse(tplStr);
+
+    return function (data) {
+        console.log(cache);
+        console.log(eval(cache));
+        // return new Function('$data', cache)(data);
+    }
+
+}
+</script>
+<script>
+var ret = qutil.template(
+    '<h3>'+
+    '<% if (typeof content === "string") %>' +
+        '<%= content %>' +
+    '<% } %>' +
+    '</h3>'
+)({a:'111rrr', content: '耗子'})
+
+console.log(ret);
+</script>
+</body>
+</html>
