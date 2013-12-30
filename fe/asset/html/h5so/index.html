@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="http://p8.qhimg.com/t0188f514cd851b5ec8.ico" type="image/x-icon" />
+    <title>360搜索</title>
+    <style>
+    html, body, form, input, span, p, button {
+        margin:0;
+        padding:0
+    }
+    body {
+        width:95%;
+        margin:0 auto;
+        text-align:center;
+        font-size:16px;
+        font-family:'Microsoft YaHei', Hei, arial, sans-serif;
+        background:#fafafa
+    }
+    a, a:visited {
+        text-decoration:none
+    }
+    #logo {
+        margin:64px auto 30px
+    }
+    form {
+        margin:0 auto;
+        margin-bottom:26px;
+        width:100%
+    }
+    #search-box {
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:stretch
+    }
+    #input-container {
+        -webkit-box-flex:3;
+        border:3px solid #3eaf1e;
+        border-right:0;
+        height:34px
+    }
+    #q {
+        border:0;
+        outline:0;
+        width:100%;
+        -webkit-box-sizing:border-box;
+        height:34px;
+        font-size:16px;
+        line-height:24px;
+        padding-left:6px;
+        -webkit-box-shadow:inset 1px 2px 3px 0 rgba(0, 0, 0, .2)
+    }
+    #search-button {
+        width:83px;
+        font-size:16px;
+        font-weight:bold;
+        font-family:'Microsoft YaHei', Hei, arial, sans-serif;
+        color:white;
+        -webkit-box-sizing:border-box;
+        border:3px solid #3eaf1e;
+        height:40px;
+        background:-webkit-gradient(linear, left top, left bottom, from(#85e856), to(#63c437));
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        border-radius:0;
+        -webkit-border-radius:0;
+        -moz-border-radius:0;
+        text-shadow:1px 1px 1px #2e9204;
+        -webkit-box-shadow:inset 0 1px 0 0 #a7ef85
+    }
+    #nav {
+        width:90%;
+        margin:0 auto;
+        overflow:hidden
+    }
+    #nav a {
+        width:25%;
+        height:30px;
+        line-height:30px;
+        float:left;
+        display:inline-block;
+        color:#76876f;
+        text-decoration:none
+    }
+    #nav.iphone {
+        width:auto
+    }
+    #nav.iphone a {
+        width:55px;
+        float:none
+    }
+    #nav.iphone .app {
+        display:none
+    }
+    #switch {
+        display:none
+    }
+    #switch, #switch a {
+        margin-bottom:18px;
+        color:#76876f;
+        text-decoration:none
+    }
+    #switch .cur {
+        color:#676767
+    }
+    #footer {
+        margin-top:180px
+    }
+    #cp {
+        line-height:22px
+    }
+    #cp, #cp a {
+        font-size:9px;
+        color:#b9b9b9
+    }
+    #cp span {
+        display:inline-block;
+        margin:0 2px
+    }
+    .suggest-container, .suggest-container * {
+        -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+    }
+    .suggest-container {
+        display:none;
+        border:1px solid #BBB;
+        border-top:0;
+        background:white
+    }
+    .suggest-item, .suggest-toolbar {
+        display:-webkit-box;
+        line-height:22px;
+        -webkit-box-pack:start;
+        -webkit-box-align:stretch
+    }
+    .suggest-toolbar {
+        -webkit-box-pack:end;
+        color:#969696;
+        background-color:#f8f8f8
+    }
+    .suggest-item-title {
+        display:block;
+        color:#333;
+        font-size:16px;
+        font-family:'Microsoft YaHei', Hei, arial, sans-serif;
+        padding-left:8px;
+        -webkit-box-flex:1;
+        background:none transparent;
+        -webkit-appearance:none;
+        text-align:left;
+        border:0;
+        border-bottom:1px solid #BBB;
+        line-height:28px
+    }
+    .suggest-container .suggest_one {
+        line-height:22px;
+        border-bottom:1px solid #ddd
+    }
+    .suggest-item-add {
+        border:0;
+        border-bottom:1px solid #BBB;
+        display:block;
+        width:52px;
+        background:url('http://p1.qhimg.com/t0129eae3267053f012.png') no-repeat scroll center center white;
+        background-size:13px 11px
+    }
+    .suggest-item-title .match {
+        color:#afafaf
+    }
+    .fill-all {
+        -webkit-box-flex:1
+    }
+    .suggest-item-add.touched {
+        background-color:#f4f4f4
+    }
+    .suggest-clearhistory {
+        display:none;
+        width:107px;
+        border-right:1px solid #BBB;
+        line-height:32px
+    }
+    .suggest-history .suggest-clearhistory {
+        display:block
+    }
+    .suggest-close {
+        line-height:32px;
+        text-align:center;
+        padding:0 12px;
+        font-size:16px;
+        width:55px;
+        border-left:1px solid #BBB
+    }
+    .suggest-close.touched {
+        background-color:#d6fdc4
+    }
+    .sep {
+        display:inline-block;
+        width:9px
+    }
+    #input-container {
+        position:relative
+    }
+    #q {
+        padding:4px 30px 4px 6px
+    }
+    .search-box-reset {
+        position:absolute;
+        display:none;
+        top:0;
+        bottom:0;
+        right:6px;
+        width:19px;
+        background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0ZEMDdBRjg0MkRFMjExODVCMkY5Mzg2NkEyREU3QyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCODc3NEUxRjJEODQxMUUyODExNjkwNEU2OUU5RjhFOCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCODc3NEUxRTJEODQxMUUyODExNjkwNEU2OUU5RjhFOCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDQ0ZEMDdBRjg0MkRFMjExODVCMkY5Mzg2NkEyREU3QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDQ0ZEMDdBRjg0MkRFMjExODVCMkY5Mzg2NkEyREU3QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiZoltEAAAL0SURBVHjaxJhfZBxBHMc3cxVCn0LIQ12VkmodYSsVrlqlJVRptfLUOsI9lT6UPuY5VKNv1Wql8pYTJdEqjT6EcBqJHtVoOE6W4yihHGUJ/f3quzEdu/Nnd2/74+tOdub3+2Ru5js7M9RoNLwUMU66RfJJFdIwaRLPWqSQ9I20S1on9VwLnHBoe5JUJ90lTWva+fiM2rwkNUmrpFekvk0xYdGmRHpEOiA9M0AlxTT6HiBXKStYmbRDek4a9bLHKHLtIHcqsCrpizR38oxJ5K66gs2SPmOSDyrGUWPWFoznwzJW2qBjGLWqJjD+3dcKgpLh3qlzTiirjxuMecXHGGqX4sAeSh6UFHuk3ymL7xqe+2D4B4zNc97Q8SbpAuk0adsBKCCdI11Ef53BzoPlGGzO4FM8Uh/w/SfphiUcQ10m7cfkSfK5ORmsbmG0MvgvCziGuopPeR5XDLXqERg3PG+xT65Fw2wB1wVUR4F6bVGLn1cY7JrlXGGv+WgB18XPFwdVs6x1XThuyiY43UjVHOpMMdiE47LXwfFItRWoJUcojglh2uUd4ToxUPdT5C8LJXlWOBlqOSXU38UmvGxRTvA/hj2bJbGwfdW19CkXn9NFXyQktoXqxIxUHnCBkLYL2+gmQC1hzo3kALcvHDvFmacnWQIviE85wG0z2EYOI1VTVmtWuA2Bg+meoWGIxG0DlGolKtwM/kHtz8hMkV28NTRux8CbHP1KDNwhDr+6eCO/9rxAp6Q4o/iS7TbDcO8lOF61U5r2h2A5BmMvW9B0GMEhlTfjr457H7+9/MBVwXfDFrgQ+eqQdKlSwiHU9/5P8JngEulIPYzwH+7g1bno4Jr3Iqi4c2UAuLBAqBA1O6aT+BbpQUFwIWpt2d5drMC3egOE6qHGiuttzyYmY2sAUC3k3kx7PxbgoPoYzp01OMcT5AyyXNxFq3WRdAqAzRRATfTlHE/l1ZcULnewfQAu4m7rNi7gfHigfDl8BF/ifXg1zVz9I8AAXti+ZtHK9fMAAAAASUVORK5CYII=) no-repeat scroll center center transparent;
+        -webkit-background-size:19px 19px;
+        height:100%
+    }
+    .focusing:not(.empty) .search-box-reset {
+        display:block
+    }
+    #se {
+        margin:0 0 5px 0
+    }
+    #se .browser {
+        font-size:14px;
+        display:inline-block;
+        line-height:19px;
+        background:url(http://p2.qhimg.com/t01593b8e2af2c0b341.png) no-repeat 0 0;
+        padding-left:24px;
+        color:#7d7d7d;
+        background-size:18px 19px
+    }
+    #se .browser em {
+        color:#1a62d8;
+        font-style:normal
+    }
+    .leidian {
+        display:inline-block;
+        padding-left:30px;
+        background:url(http://p0.qhimg.com/d/inn/efe7c177/32.png) no-repeat 0 center;
+        background-size:24px 24px;
+        line-height:40px;
+        font-size:16px
+    }
+    #nav .novel {
+        position:relative;
+        display:none
+    }
+    #nav .novel:after {
+        content:"";
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        border:1px solid #fff;
+        box-shadow:0 1px 1px #666;
+        position:absolute;
+        right:50%;
+        top:3px;
+        margin-right:-26px;
+        background:-webkit-linear-gradient(top, red, #d80000);
+    </style>
+    <base target="_self">
+</head>
+
+<body>
+    <div id="logo">
+        <img src="http://p1.qhimg.com/t01e4318b7cadad2151.png" width="164" height="28">
+    </div>
+    <div id="main">
+        <form action="http://m.so.com/s" class="empty">
+            <div id="search-box">
+                <div id="input-container">
+                    <input type="text" name="q" id="q" class="q" autocomplete="off" x-webkit-speech>
+                    <input type="hidden" name="src" value="home">
+                    <div class="search-box-reset"></div>
+                </div>
+                <input type="submit" id="search-button" value="搜 索">
+            </div>
+        </form>
+        <div id="nav" class="iphone">
+            <a href="http://m.news.so.com/?src=m_home" data-search="http://m.news.so.com/ns?src=m_home&q=">新闻</a>
+            <a href="http://m.map.so.com/?src=m_home" data-search="http://m.map.so.com/?ie=utf-8&t=map&src=m_home&k=">地图</a>
+            <a href="http://m.leidian.com/?src=m_home" data-search="http://m.leidian.com/s?src=m_home&v=ms&q=" class="app">雷电</a>
+            <a href="http://m.video.so.com/?src=m_home" data-search="http://m.video.so.com/android/search/index.php?src=m_home&kw=">影视</a>
+            <a href="http://m.image.so.com/?src=m_home" data-search="http://m.image.so.com/i?src=m_home&q=">图片</a>
+            <a href="http://m.wenda.so.com/?src=m_home" data-search="http://m.wenda.so.com/search/?src=m_home&q=">问答</a>
+            <a href="http://m.leidian.com/soft/?src=m_home" data-search="http://m.leidian.com/s?t=SoftwareAndGame&src=m_home&q=" class="app">软件</a>
+            <a href="http://m.leidian.com/game/?src=m_home" data-search="http://m.leidian.com/s?t=SoftwareAndGame&src=m_home&q=" class="app">游戏</a>
+            <a href="http://m.so.com/mebook/bookshelf" class="novel">小说</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="switch">
+            <span class="cur">手机版</span>
+            <span class="sep">|</span><a href="http://www.so.com/?vit=1">电脑版</a>
+        </div>
+        <p class="leidian"><a href="http://down.360safe.com/360kan/360Video_360so3.apk" class="ldLink">360影视大全</a>，手机看片神器！</p>
+        <div id="se" style="display:none;">
+            <a href="http://down.360safe.com/360mse_20001050.apk" target="_blank" class="browser">安全搜索从<em>360浏览器</em>开始</a>
+        </div>
+        <div id="cp" style="word-break:break-all;">
+            <span>Copyright&nbsp;&copy;360.CN</span>
+            <span><a href="http://www.miibeian.gov.cn/">京ICP备08010314号-19</a>
+            </span>
+            <span>京公网安备110000000006号</span>
+        </div>
+    </div>
+    <script>
+    var exp = new RegExp("(?:;)?" + encodeURIComponent("d_shadow") + "=([^;]*);?");
+    exp.test(document.cookie) && (document.querySelector("#nav .novel").style.display = "block")
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        window.scrollTo(0, 1)
+    }, !1), document.getElementById("nav").className = /iphone|ipad|ipod|ios/gi.test(navigator.userAgent) ? "iphone" : "",
+    function() {
+        var e = navigator.userAgent.toLowerCase();
+        e.indexOf("360 aphone") < 0 && e.indexOf("android") >= 0 && (document.getElementById("se").style.display = "block")
+    }();
+    var qs = document.getElementsByClassName("q");
+    for (var i = qs.length - 1; i >= 0; i--) qs[i].addEventListener("input", function() {
+        this.value.length === 0 ? this.form.classList.add("empty") : this.form.classList.remove("empty")
+    }, !1), qs[i].addEventListener("focus", function() {
+        this.form.classList.add("focusing")
+    }, !1), qs[i].addEventListener("blur", function() {
+        this.form.classList.remove("focusing")
+    }, !1);
+    var resets = document.getElementsByClassName("search-box-reset");
+    for (var i = resets.length - 1; i >= 0; i--) resets[i].addEventListener("touchstart", function() {
+        var e = this.parentNode.getElementsByClassName("q")[0];
+        e.value = "", e.form.classList.add("empty"), event.preventDefault(), event.stopPropagation()
+    }, !1)
+    </script>
+    <script>
+    (function() {
+        var e = document.getElementById("nav").getElementsByTagName("a");
+        for (var t = e.length - 1; t >= 0; t--) e[t].addEventListener("touchstart", function(e) {
+            var t = document.getElementById("q");
+            if (t && t.value != "") {
+                var n = this.getAttribute("data-search");
+                n && (this.href = n + encodeURIComponent(t.value))
+            }
+        }, !1)
+    })()
+    </script>
+    <script src="http://s6.qhimg.com/static/b74366ccebe519ad/suggest.js"></script>
+    <script>
+    new Suggest({
+        elements: {
+            input: document.getElementById("q"),
+            wrap: document.forms[0]
+        }
+    })
+    </script>
+    <script src="http://s0.qhimg.com/monitor/;monitor/4f1853e5.js"></script>
+    <script>
+    (function() {
+        function n() {
+            monitor.setConf("pvUrl", "http://s.360.cn/m_sou/home.gif").log({
+                src: e
+            }, "pv")
+        }
+
+        function r() {
+            monitor.setConf("pvUrl", "http://s.so.360.cn/m_sou/home.gif").log({
+                src: e
+            }, "pv")
+        }
+        var e = "";
+        location.search.substr(1).split("&").forEach(function(t) {
+            var n = t.split("=");
+            n[0] == "src" && (e = n[1])
+        });
+        var t = [n, r];
+        Math.random() > .5 && t.reverse(), t.forEach(function(e) {
+            e()
+        })
+    })()
+    </script>
+</body>
+
+</html>

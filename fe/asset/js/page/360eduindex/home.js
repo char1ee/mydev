@@ -1,5 +1,5 @@
 require([
-    '../../js/amd_modules/widget/Carousel',
+    '../../../js/amd_modules/widget/Carousel',
     './examCalendar'
 ], function (car, getCalendar) {
     var tmpl = qutil.tmpl;

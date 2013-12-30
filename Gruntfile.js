@@ -86,10 +86,10 @@ module.exports = function (grunt) {
         requirejs: {
             compile: {
                 options: {
-                    name: 'xueba',
-                    baseUrl: cfg.jsPath + 'page/xueba',
-                    mainConfigFile: cfg.jsPath + 'page/xueba/xueba.js',
-                    out: cfg.jsPath + 'page/xueba/xueba-r.js'
+                    name: 'home',
+                    baseUrl: cfg.jsPath + 'page/360eduindex',
+                    mainConfigFile: cfg.jsPath + 'page/360eduindex/home.js',
+                    out: cfg.jsPath + 'page/360eduindex/home-r.js'
                 }
             }
         }
