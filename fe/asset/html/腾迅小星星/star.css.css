@@ -1,0 +1,125 @@
+@-webkit-keyframes new-year-travel{0%{opacity:1}
+100%{-webkit-transform:translate(-800px,150px);opacity:0}}
+@-webkit-keyframes new-year-bounce{from,to{-webkit-animation-timing-function:ease-out}
+2%{-webkit-transform:translateY(-130px) rotate(-90deg);-webkit-animation-timing-function:ease-in}
+80%{opacity:.9}
+100%{-webkit-transform:rotate(-180deg);opacity:0}}
+.new-year-2014 .animation{top:5px;right:25px}
+.new-year-2014-play .animation{-webkit-animation:1.5s new-year-travel linear forwards}
+.new-year-2014 .animation{display:none;z-index:99}
+.new-year-2014-play .animation{display:block}
+.new-year-2014-play .rect,.new-year-2014-play .diam,.new-year-2014-play .trig,.new-year-2014-play .star,.new-year-2014-play .tape{-webkit-animation-name:new-year-bounce;-webkit-animation-fill-mode:forwards;-webkit-animation-duration:1.5s}
+.new-year-2014-play .animation1{display:block;-webkit-animation:1.5s new-year-travel-1 linear forwards}
+@-webkit-keyframes new-year-travel-1{0%{opacity:1}
+100%{-webkit-transform:translateX(-600px)}}
+.new-year-2014-play .rect1{-webkit-animation-name:new-year-bounce-1}
+@-webkit-keyframes new-year-bounce-1{from,to{-webkit-animation-timing-function:ease-out}
+50%{-webkit-transform:translateY(-250px) rotate(-90deg);rotateZ(360deg);-webkit-animation-timing-function:ease-in}
+80%{opacity:.6}
+100%{-webkit-transform:rotate(-180deg);opacity:0}}
+.new-year-2014-play .animation2{-webkit-animation:1.5s new-year-travel-2 linear forwards}
+@-webkit-keyframes new-year-travel-2{0%{opacity:1}
+100%{-webkit-transform:translateX(-550px)}}
+.new-year-2014-play .rect2{-webkit-animation-name:new-year-bounce-2}
+@-webkit-keyframes new-year-bounce-2{from,to{-webkit-animation-timing-function:ease-out}
+50%{-webkit-transform:translateY(-150px) rotate(-90deg);rotateZ(360deg);-webkit-animation-timing-function:ease-in}
+80%{opacity:.6}
+100%{-webkit-transform:rotate(-180deg);opacity:0}}
+.new-year-2014-play .animation3{-webkit-animation:1.5s new-year-travel-3 linear forwards}
+@-webkit-keyframes new-year-travel-3{0%{opacity:1}
+100%{-webkit-transform:translate(-450px,35px)}}
+.new-year-2014-play .rect3{-webkit-animation-name:new-year-bounce-1}
+@-webkit-keyframes new-year-bounce-3{0%{opacity:1}
+100%{-webkit-transform:translateX(-280px)}}
+.new-year-2014-play .animation4{-webkit-animation:1.5s new-year-travel-3 linear forwards}
+@-webkit-keyframes new-year-travel-4{0%{opacity:1}
+100%{-webkit-transform:translateX(-380px)}}
+.new-year-2014-play .animation6{-webkit-animation:1.5s new-year-travel-6 linear forwards}
+@-webkit-keyframes new-year-travel-6{0%{opacity:1}
+100%{-webkit-transform:translate(-430px,30px)}}
+.new-year-2014-play .animation7{-webkit-animation:1.5s new-year-travel-7 linear forwards}
+@-webkit-keyframes new-year-travel-7{0%{opacity:1}
+100%{-webkit-transform:translate(-470px,-100px)}}
+.new-year-2014-play .animation8{-webkit-animation:1.5s new-year-travel-8 linear forwards}
+@-webkit-keyframes new-year-travel-8{0%{opacity:1}
+100%{-webkit-transform:translate(-370px,0)}}
+.new-year-2014-play .animation9{-webkit-animation:1.5s new-year-travel-9 linear forwards}
+@-webkit-keyframes new-year-travel-9{0%{opacity:1}
+100%{-webkit-transform:translate(-400px,-80px);opacity:0}}
+.new-year-2014-play .animation10{-webkit-animation:1.5s new-year-travel-10 linear forwards}
+@-webkit-keyframes new-year-travel-10{0%{opacity:1}
+100%{-webkit-transform:translate(-550px,-35px);opacity:0}}
+.new-year-2014-play .animation11{-webkit-animation:1.5s new-year-travel-11 linear forwards}
+@-webkit-keyframes new-year-travel-11{0%{opacity:1}
+100%{-webkit-transform:translate(-360px,-50px);opacity:0}}
+.new-year-2014-play .animation12{-webkit-animation:1.5s new-year-travel-12 linear forwards}
+@-webkit-keyframes new-year-travel-12{0%{opacity:1}
+100%{-webkit-transform:translate(-460px,-100px);opacity:0}}
+.new-year-2014-play .animation13{-webkit-animation:1.5s new-year-travel-13 linear forwards}
+@-webkit-keyframes new-year-travel-13{0%{opacity:1}
+100%{-webkit-transform:translate(-360px,-30px);opacity:0}}
+.new-year-2014-play .animation14{-webkit-animation:1.5s new-year-travel-14 linear forwards}
+@-webkit-keyframes new-year-travel-14{0%{opacity:1}
+100%{-webkit-transform:translate(-270px,-40px);opacity:0}}
+.new-year-2014-play .animation15{-webkit-animation:1.5s new-year-travel-15 linear forwards}
+@-webkit-keyframes new-year-travel-15{0%{opacity:1}
+100%{-webkit-transform:translate(-400px,-60px);opacity:0}}
+.new-year-2014-play .animation16{-webkit-animation:1.5s new-year-travel-16 linear forwards}
+@-webkit-keyframes new-year-travel-16{0%{opacity:1}
+100%{-webkit-transform:translate(-400px,-70px);opacity:0}}
+.new-year-2014-play .animation17{-webkit-animation:1.5s new-year-travel-17 linear forwards}
+@-webkit-keyframes new-year-travel-17{0%{opacity:1}
+100%{-webkit-transform:translate(-623px,-15px);opacity:0}}
+.new-year-2014-play .animation18{-webkit-animation:1.5s new-year-travel-18 linear forwards}
+@-webkit-keyframes new-year-travel-18{0%{opacity:1}
+100%{-webkit-transform:translate(-463px,-77px);opacity:0}}
+.new-year-2014-play .animation19{-webkit-animation:1.5s new-year-travel-19 linear forwards}
+@-webkit-keyframes new-year-travel-19{0%{opacity:1}
+100%{-webkit-transform:translate(-326px,-46px);opacity:0}}
+.new-year-2014-play .animation20{-webkit-animation:1s new-year-travel-20 linear forwards}
+@-webkit-keyframes new-year-travel-20{100%{-webkit-transform:translate(-520px,90px);opacity:0}}
+.new-year-2014-play .animation21{-webkit-transform:scale(1.5);-webkit-animation:1.5s new-year-travel-21 linear forwards}
+@-webkit-keyframes new-year-travel-21{100%{-webkit-transform:translate(-486px,130px)}}
+.new-year-2014-play .animation22{-webkit-transform:scale(1.5);-webkit-animation:1s new-year-travel-22 linear forwards}
+@-webkit-keyframes new-year-travel-22{100%{-webkit-transform:translate(-550px,60px) scale(0.6);opacity:0}}
+.new-year-2014-play .animation23{-webkit-transform:scale(1.2);-webkit-animation:1s new-year-travel-23 linear forwards}
+@-webkit-keyframes new-year-travel-23{100%{-webkit-transform:translate(-589px,50px);opacity:0}}
+.new-year-2014-play .animation24{-webkit-transform:scale(1.1);-webkit-animation:1s new-year-travel-24 linear forwards}
+@-webkit-keyframes new-year-travel-24{100%{-webkit-transform:translate(-489px,40px);opacity:0}}
+.new-year-2014-play .animation25{-webkit-animation:1s new-year-travel-25 linear forwards}
+@-webkit-keyframes new-year-travel-25{100%{-webkit-transform:translate(-378px,30px);opacity:0}}
+.new-year-2014-play .animation26{-webkit-animation:1s new-year-travel-26 linear forwards}
+@-webkit-keyframes new-year-travel-26{100%{-webkit-transform:translate(-220px,85px) scale(0.8);opacity:0}}
+.new-year-2014-play .animation27{-webkit-animation:1s new-year-travel-27 linear forwards}
+@-webkit-keyframes new-year-travel-27{0%{opacity:1}
+100%{-webkit-transform:translate(-424px,-100px) scale(0.8);opacity:0}}
+.new-year-2014-play .animation28{-webkit-animation:1s new-year-travel-28 linear forwards}
+@-webkit-keyframes new-year-travel-28{0%{opacity:1}
+100%{-webkit-transform:translate(-300px,-130px) scale(0.8);opacity:0}}
+.new-year-2014-play .animation29{-webkit-animation:1s new-year-travel-29 linear forwards}
+@-webkit-keyframes new-year-travel-29{0%{opacity:1}
+100%{-webkit-transform:translate(-185px,100px) scale(0.8);opacity:0}}
+.new-year-2014-play .animation30{-webkit-animation:1s new-year-travel-30 linear forwards}
+@-webkit-keyframes new-year-travel-30{0%{opacity:1}
+100%{-webkit-transform:translate(-285px,150px) scale(0.6);opacity:0}}
+.new-year-2014-play .animation31{-webkit-animation:1s new-year-travel-31 linear forwards}
+@-webkit-keyframes new-year-travel-31{0%{opacity:1}
+100%{-webkit-transform:translate(-165px,50px) scale(0.6);opacity:0}}
+.new-year-2014-play .animation32{-webkit-animation:1s new-year-travel-32 linear forwards}
+@-webkit-keyframes new-year-travel-32{0%{opacity:1}
+100%{-webkit-transform:translate(-385px,10px) scale(0.6);opacity:0}}
+.new-year-2014-play .animation33{-webkit-animation:1s new-year-travel-33 linear forwards}
+@-webkit-keyframes new-year-travel-33{0%{opacity:1}
+100%{-webkit-transform:translate(-185px,40px) scale(0.6);opacity:0}}
+.new-year-2014-play .animation34{-webkit-animation:1s new-year-travel-34 linear forwards}
+@-webkit-keyframes new-year-travel-34{0%{opacity:1}
+100%{-webkit-transform:translate(-105px,30px);opacity:0}}
+.new-year-2014-play .animation35{-webkit-animation:1s new-year-travel-35 linear forwards}
+@-webkit-keyframes new-year-travel-35{0%{opacity:1}
+100%{-webkit-transform:translate(-205px,-30px);opacity:0}}
+.new-year-2014-play .animation36{-webkit-animation:1s new-year-travel-36 linear forwards}
+@-webkit-keyframes new-year-travel-36{0%{opacity:1}
+100%{-webkit-transform:translate(-195px,-10px);opacity:0}}
+.new-year-2014-play .animation37{-webkit-animation:1s new-year-travel-37 linear forwards}
+@-webkit-keyframes new-year-travel-37{0%{opacity:1}
+100%{-webkit-transform:translate(-295px,-30px);opacity:0}

@@ -1,0 +1,224 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display:block
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin:0;
+    padding:0
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0
+}
+img {
+    border:0
+}
+address, caption, cite, code, dfn, em, strong, th {
+    font-style:normal
+}
+ol, ul {
+    list-style:none
+}
+html{
+    -webkit-user-select:none;
+    height:100%;
+    background-color:#ffe8c7;;
+    color:#333;
+    font-family:arial;
+    font:500 0.875em/1.8 sans-serif;
+}
+a {
+    text-decoration:none
+}
+a, a:visited {
+    color:#333
+}
+
+
+.g-titlebar {
+    background:-webkit-gradient(linear, left top, left bottom, from(#d6331d), to(#d6331d));
+    -webkit-box-align:center;
+    display:-webkit-box;
+    height:40px;
+    position:relative;
+}
+.g-titlebar .btn {
+    display: inline-block;
+    height: 100%;
+    min-width:70px;
+    color:#f6f6f6;
+    font-size:14px;
+    text-align:center;
+    display: -webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+}
+.g-titlebar .go-back{
+    border:1px solid #c7210b;
+    border-radius: 5px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+}
+.g-titlebar .title {
+    -webkit-box-flex:1;
+    color:#f6f6f6;
+    font-size:17px;
+    text-align:center
+}
+/*文章容器*/
+.g-article {
+    font-size: 16px;
+}
+.g-article p {
+    margin-bottom: 35px;
+}
+.g-article img{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+.g-red{
+    color:#d6331d;
+}
+.g-green{
+    color:#6a960d;
+}
+.g-orange{
+    color:#f48a00;
+}
+.g-center{
+    margin: 0 auto;
+}
+.g-btn {
+    border:none;
+    outline: 0;
+    font-weight:700;
+    display:inline-block;
+}
+.g-btn {
+    -webkit-tag-highlight-color : rgba(0,0,0,0);
+    -webkit-tag-highlight-color : transparent;
+}
+.g-btn:active{
+    -webkit-transform : scale3d(0.95, 0.95, 1);
+}
+.g-btn-yellow{
+    background:#ffa700;
+    border-radius:7px;
+    height:34px;
+    color:#ad3d01;
+    text-shadow:1px 1px #e9ae00;
+    width:100%;
+    position:relative;
+}
+.g-btn-yellow:before{
+    background:-webkit-gradient(linear, left top, left bottom, from(#ffe400), to(#ffcf00));
+    border-radius:7px;
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    height:32px;
+    width:100%;
+}
+.g-btn-yellow span{
+    position:relative;
+    z-index:1;
+}
+
+/**/
+
+.g-text {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    height: 34px;
+    font-size: 16px;
+    -webkit-box-shadow: none;
+    border:1px solid #c8c8c8;
+}
+.form-vertial {
+    padding: 35px;
+    background:#fff2e0;
+    border-radius:5px;
+}
+.form-vertial .g-text-group{
+    display:block;
+    -webkit-box-sizing: border-box;
+    width:100%;
+}
+.form-vertial .g-text-group .g-text{
+    margin-bottom:15px;
+    padding-left:.3rem;
+}
+.form-vertial .form-action{
+   text-align:center;
+}
+
+.bd {
+    padding:5px 15px;
+}
+
+#nSign .bd{
+    background:url(http://p5.qhimg.com/t01318c4da35e34c9a1.png) no-repeat 50% -62px;background-size: 50% 50%;
+}
+#nSign .notice{
+    text-align:center;
+    font-size:18px;
+    min-height:110px;
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+}
+
+
+#nHb .bd{
+    height:100%;
+    display:-webkit-box;
+    text-align: center;
+    padding-top:27px;
+}
+#nHb .md{
+    border:10px solid #c5dd67;
+    border-top:none;
+    -webkit-box-sizing: border-box;
+    width:100%;
+
+}
+#nHb .md-hd{
+    /*height:13px;*/
+    background:#c5dd67;
+}
+#nHb .md-bd{
+    background:#fff2e0;
+}
+#nHb .md-title{
+    font-size:13px;
+    height:27px;
+    line-height:27px;
+    text-align:left;
+    color:#395c0c;
+}
+#nHb .nothing{
+    min-height:70px;
+    font-weight:700;
+    font-size:20px;
+    line-height:70px;
+}
+#nHb .list {
+    width: 100%;
+}
+#nHb .list td{
+    border-bottom: 1px solid #c5dd67;
+    text-indent: 1rem;
+    text-align:left;
+    padding: 5px 0;
+}
+#nHb .list td:nth-of-type(1){
+    min-width: 80px;
+}
+#nHb .list td:nth-of-type(2){
+    min-width: 80px;
+}
